@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>강준모 ♥ 홍세림 결혼합니다.</title>
+<meta property="og:title" content="강준모 ♥ 홍세림 결혼합니다.">
+<meta property="og:description" content="2027년 1월 16일 토요일 오후 4시 20분 · 아이벡스 컨벤션 5층">
+<meta property="og:image" content="사진/01_커버_세로1x2_1500x3000/main.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Ms+Madi&display=swap">
+<style>
+/* ===== 토큰 (살롱드레터 레퍼런스) ===== */
+:root{
+  --font:"Gowun Dodum","Apple SD Gothic Neo",sans-serif;
+  --text:#383737; --btn-text:#fff;
+  --point1:#43573a;   /* 제목 */
+  --point2:#516349;   /* 버튼·달력 원·카운트 원 */
+  --groom:#5f8b9b; --bride:#BB7273;
+  --ivory:#F5F3ED; --line:#d0d2d5; --grey:#595555; --bg-grey:#F9F9F9;
+  --shadow:1px 1px 4px 1px rgba(0,0,0,.1);
+  --script:#d97e9f;   /* 커버 손글씨 */
+  --f-xl:1.6rem; --f-l:1.2rem; --f-r:1.05rem; --f-m:.95rem; --f-ms:.9rem; --f-s:.8rem; --f-xs:.7rem;
+  --sec:45px 0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:13px}
+body{font-family:var(--font);color:var(--text);background:#ececec;line-height:1.5;word-break:keep-all;-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%}
+button,a{font:inherit;color:inherit;background:none;border:0;text-decoration:none;cursor:pointer}
+p{white-space:pre-wrap}
+.layout{max-width:420px;margin:0 auto;background:#fff;min-height:100vh;position:relative;overflow:hidden}
+section{padding:var(--sec);text-align:center}
+.inner{padding:0 20px}
+.title h2{font-size:var(--f-l);font-weight:500;color:var(--point1);text-shadow:1px 1px 2px rgba(0,0,0,.05);margin-bottom:30px}
+.utext{font-size:var(--f-m);line-height:1.7}
+.utext p:empty,.intro_list p:empty,.notice .desc p:empty{height:1.7em}
+img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
+.l_btn{display:inline-block;font-size:var(--f-ms);padding:10px 40px;border-radius:4px;background:var(--point2);color:var(--btn-text);box-shadow:var(--shadow)}
+.s_btn{display:inline-block;font-size:var(--f-ms);padding:5px 20px;border:1px solid var(--line);border-radius:4px;color:#5d5d5d;background:#fff}
+.todo{color:#b8862b;background:#fff8e6;border-radius:2px;padding:0 3px}
+
+/* 등장 효과 (AOS fade-up) */
+[aos]{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+[aos].in{opacity:1;transform:none}
+
+/* ===== 로딩 ===== */
+#loading{position:fixed;inset:0;z-index:100;background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;transition:opacity .9s}
+#loading.out{opacity:0;pointer-events:none}
+#loading .n{font-size:var(--f-l);color:var(--point1);letter-spacing:.15em}
+#loading .d{font-size:var(--f-s);color:var(--grey);letter-spacing:.25em}
+
+/* ===== 1. 커버 ===== */
+.cover{position:relative;height:100vh;max-height:850px;min-height:620px;padding:0;background:#e9e6df;overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover}
+.cover .script{position:absolute;left:50%;top:74%;transform:translate(-50%,-74%);width:92%}
+.cover .hand{width:100%;display:block;overflow:visible}
+.cover .hs{fill:none;stroke:var(--script);stroke-width:300;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
+.cover .script.go .hs{animation:draw var(--dur) linear var(--delay) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cover .scroll{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);color:#fff;font-size:var(--f-xs);letter-spacing:.2em;opacity:.85;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.cover .scroll span{display:block;width:1px;height:26px;background:#fff;margin:0 auto 6px;animation:scrollLine 1.6s ease-in-out infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ===== 2. 글귀 / 3. 인사말 ===== */
+.poem .utext{padding:0 30px}
+.greeting h4{font-size:var(--f-l);font-weight:400;color:var(--point1);margin-bottom:30px;text-shadow:1px 1px 2px rgba(0,0,0,.05)}
+.greeting .utext{padding:0 20px}
+
+/* ===== 4. 신랑·신부 ===== */
+.couple{padding-left:5px;padding-right:5px}
+.couple .img_con{display:flex;gap:10px;justify-content:center;padding:0 15px}
+.couple .img_con .img_box{flex:1;height:200px;border-radius:3px;overflow:hidden;background:#e7e7e7;box-shadow:var(--shadow)}
+.couple .img_con img{width:100%;height:100%;object-fit:cover}
+.couple .name_con{display:flex;gap:5px;margin:20px 0 15px}
+.couple .name_list{flex:1;display:flex;justify-content:center;align-items:center;gap:6px}
+.couple .name_box{font-size:var(--f-s)}
+.couple .groom .name_box{color:var(--groom)}.couple .bride .name_box{color:var(--bride)}
+.couple .name_box .name{font-size:var(--f-m);color:var(--text);margin-left:4px}
+.couple .icon svg{width:15px;height:15px;color:var(--point1);filter:drop-shadow(1px 1px 1px rgba(0,0,0,.15))}
+.couple .intro_con{display:flex;gap:5px}
+.couple .intro_list{flex:1;font-size:15px;line-height:1.6}
+.couple .relation_con{display:flex;gap:5px;margin-top:20px}
+.couple .relation_list{flex:1;font-size:13px}
+.couple .relation_list .rel{margin-left:4px}
+
+/* ===== 5. 갤러리 ===== */
+.gallery .slider{position:relative}
+.gallery .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.gallery .track::-webkit-scrollbar{display:none}
+.gallery .track>div{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5;background:#f0efec}
+.gallery .track img{width:100%;height:100%;object-fit:cover}
+.gallery .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;color:#fff;text-shadow:0 0 6px rgba(0,0,0,.5);font-size:30px;line-height:44px}
+.gallery .nav.prev{left:4px}.gallery .nav.next{right:4px}
+.gallery .fraction{font-size:var(--f-s);color:#8d8e90;margin-top:14px;letter-spacing:.1em}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:200;display:none;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;object-fit:contain}
+#lb .x{position:absolute;top:12px;right:16px;color:#fff;font-size:30px}
+
+/* ===== 6. 안내 탭 ===== */
+.notice .tabs{display:flex;border-bottom:1px solid var(--line);margin:0 20px 20px}
+.notice .tabs button{flex:1;padding:12px 0;font-size:var(--f-m);color:#8d8e90;position:relative}
+.notice .tabs button.active{color:var(--text)}
+.notice .tabs button.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--point1)}
+.notice .panel{display:none}
+.notice .panel.active{display:block}
+.notice .panel .img_box{margin:0 20px 20px;border-radius:6px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:#f0efec}
+.notice .panel .img_box.empty{display:none}
+.notice .panel .img_box img{width:100%;height:100%;object-fit:cover}
+.notice .desc{padding:0 25px;font-size:var(--f-m);line-height:1.8}
+.notice .desc mark{background:#295218;color:#fff;padding:0 3px}
+
+/* ===== 7. 예식 안내 (달력·카운트) ===== */
+.ceremony .c_title{font-size:var(--f-l);font-weight:500;color:var(--point1);margin-bottom:16px;text-shadow:1px 1px 2px rgba(0,0,0,.05)}
+.ceremony .c_sub{font-size:var(--f-r);margin-bottom:6px}
+.ceremony .c_loc{font-size:var(--f-r);margin-bottom:30px}
+.ceremony .img_box{width:calc(100% - 80px);height:300px;margin:0 auto 30px;border-radius:8px;overflow:hidden;box-shadow:var(--shadow);background:#f0efec}
+.ceremony .img_box img{width:100%;height:100%;object-fit:cover}
+.ceremony table{width:80%;min-width:310px;margin:0 auto;border-collapse:collapse;color:#4b4b4b;font-size:var(--f-m);text-align:center}
+.ceremony caption{margin-bottom:16px;padding-bottom:8px}
+.ceremony caption span{font-size:var(--f-l);font-weight:500;color:var(--point1)}
+.ceremony thead{line-height:3}
+.ceremony th{font-weight:400}
+.ceremony th.color{color:var(--point1)}
+.ceremony td{position:relative;line-height:3.3;height:43px}
+.ceremony td.active{color:#fff;z-index:1}
+.ceremony td.active::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:var(--point2);z-index:-1}
+.ceremony td em{position:absolute;top:88%;left:50%;transform:translateX(-50%);font-style:normal;font-size:var(--f-xs);color:var(--text);white-space:nowrap;line-height:1.2}
+.ceremony .d_day{margin:60px 20px 20px}
+.ceremony .d_day .sub{font-size:var(--f-r)}
+.ceremony .d_day .sub svg{width:12px;height:12px;vertical-align:-1px;color:var(--text);margin:0 3px}
+.ceremony .calc{display:flex;justify-content:space-between;margin-top:32px;padding:0 10px}
+.ceremony .calc span{position:relative;display:flex;align-items:center;justify-content:center;min-width:60px;min-height:60px;border-radius:50%;background:var(--point2);color:#fff;font-size:var(--f-l);box-shadow:var(--shadow)}
+.ceremony .calc span::after{content:attr(data-l);position:absolute;bottom:-22px;font-size:var(--f-xs);color:var(--text);font-weight:500}
+
+/* ===== 8. 오시는 길 ===== */
+.location .top_box{margin-bottom:30px}
+.location .loc_name{display:block;font-size:var(--f-r);font-weight:500;margin-bottom:6px}
+.location .loc_hall{display:block;font-size:var(--f-r);line-height:24px;margin-bottom:6px}
+.location .loc_addr{display:block;font-size:var(--f-m)}
+.location .map_box{height:300px;border-radius:4px;overflow:hidden;background:#f8f9fa;box-shadow:var(--shadow)}
+.location .map_box iframe{width:100%;height:100%;border:0}
+.location .navi{display:flex;gap:8px;margin-top:10px}
+.location .navi a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px;border:1px solid #466b5e;border-radius:3px;font-size:var(--f-m);box-shadow:var(--shadow);background:#fff}
+.location .navi i{width:14px;height:14px;border-radius:3px;display:inline-block}
+.location .trans{margin-top:40px;text-align:left}
+.location .trans_box{margin-bottom:40px}
+.location .trans_box:last-child{margin-bottom:0}
+.location .trans_title{font-size:var(--f-r);font-weight:600;color:var(--point1);margin-bottom:20px}
+.location .trans_text p{font-size:var(--f-m);font-weight:500;margin-bottom:5px;line-height:1.7}
+.location .trans_text p.gap{height:.6em}
+
+/* ===== 9. 참석 / 10. 계좌 ===== */
+.rsvp .textarea,.bank .textarea{margin-bottom:40px}
+.rsvp .textarea p,.bank .textarea p{font-size:var(--f-m);line-height:1.7}
+.bank .account{text-align:left}
+.bank .account_wrap{margin-bottom:10px}
+.bank .account_box{position:relative;padding:10px 20px;border:1px solid #cacaca;border-radius:5px;font-size:var(--f-r);font-weight:500;color:var(--groom);cursor:pointer;background:#fff}
+.bank .account_box.bride_account{color:var(--bride)}
+.bank .account_box svg{position:absolute;top:50%;right:20px;transform:translateY(-50%);width:14px;height:14px;color:#837f7f;transition:.4s}
+.bank .account_wrap.open .account_box{border-radius:5px 5px 0 0}
+.bank .account_wrap.open .account_box svg{transform:translateY(-50%) rotateX(-180deg)}
+.bank .account_list{display:none;border:1px solid #cacaca;border-top:0;border-radius:0 0 5px 5px;background:#fff}
+.bank .account_wrap.open .account_list{display:block}
+.bank .account_list li{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid #eee}
+.bank .account_list li:last-child{border-bottom:0}
+.bank .account_list h4{font-size:var(--f-s);font-weight:400;color:var(--grey);margin-bottom:4px}
+.bank .acc_num{font-size:13px;letter-spacing:.02em}
+.bank .acc_name{font-size:var(--f-s);color:var(--grey);margin-top:2px}
+.bank .acc_name .holder{margin-left:6px}
+.bank .s_btn.ok{background:var(--point2);color:#fff;border-color:var(--point2)}
+
+/* ===== 11. 함께한 시간 / 12. 엔딩 / 푸터 ===== */
+.together span{display:block}
+.together span:first-child{margin-bottom:20px}
+.together .our_date{font-size:13px}
+.ending{position:relative}
+.ending .img_box{position:relative;font-size:0;aspect-ratio:4/5;background:#ddd9d2}
+.ending .img_box img{width:100%;height:100%;object-fit:cover}
+.ending .dimmed{position:absolute;inset:0;background:rgba(0,0,0,.25);z-index:1}
+.ending .text_box{position:absolute;top:0;width:100%;padding:20px 10px;z-index:2;text-align:center;font-size:var(--f-m);line-height:1.7;color:#fff}
+.ending .text_box b{font-weight:700}
+.footer{padding:30px 10px 60px;text-align:center;font-size:var(--f-xs);color:#8d8e90;letter-spacing:.05em}
+.footer .logo{font-family:"Ms Madi",cursive;font-size:2rem;color:var(--text);margin-bottom:8px}
+
+/* 플로팅 버튼 */
+.quick{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:420px;height:0;pointer-events:none;z-index:90}
+.quick button{position:absolute;right:20px;width:42px;height:42px;border-radius:50%;background:rgba(153,153,153,.35);color:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;pointer-events:auto;backdrop-filter:blur(2px)}
+.quick .share{bottom:20px}.quick .up{bottom:72px;opacity:0;transition:.3s}
+.quick .up.show{opacity:1}
+.quick svg{width:18px;height:18px}
+/* ===== 참석 여부 팝업 (첫 진입) ===== */
+.rsvp_popup{display:none;position:fixed;inset:0;z-index:101;background:rgba(0,0,0,.4)}
+.rsvp_popup.active{display:block}
+.rsvp_popup .popup_wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:calc(100% - 60px);max-width:360px;background:#fff;border-radius:8px;padding:40px 19px 20px;text-align:center}
+.rsvp_popup .title h2{font-size:var(--f-r);font-weight:500;color:var(--point1);margin-bottom:20px}
+.rsvp_popup .desc{margin-bottom:20px;padding-bottom:20px;border-bottom:1px dashed var(--line);font-size:var(--f-ms);line-height:1.5}
+.rsvp_popup .wedding_info{margin-bottom:30px;text-align:left;font-size:.85rem}
+.rsvp_popup .wedding_info tr{line-height:1.6;vertical-align:baseline}
+.rsvp_popup .wedding_info td:first-child{padding-right:6px;color:#6c6c6c}
+.rsvp_popup .wedding_info svg{width:12px;height:12px;vertical-align:-1px}
+.rsvp_popup .wedding_info .g{font-size:var(--f-s);color:var(--groom)}.rsvp_popup .wedding_info .b{font-size:var(--f-s);color:var(--bride)}
+.rsvp_popup .btn_box{margin-bottom:20px}
+.rsvp_popup .btn_box button{background:var(--point2);color:#fff;font-size:.9rem;padding:10px 40px;border-radius:4px;box-shadow:var(--shadow)}
+.rsvp_popup .show_btn label{display:flex;align-items:center;justify-content:center;padding:10px;font-size:var(--f-s);color:var(--line);cursor:pointer}
+.rsvp_popup .show_btn input{display:none}
+.rsvp_popup .show_btn i{width:16px;height:16px;border:1px solid var(--line);border-radius:50%;margin-right:4px;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:10px;color:var(--line)}
+.rsvp_popup .show_btn input:checked~i{background:var(--point2);border-color:transparent;color:#fff}
+.rsvp_popup .show_btn input:checked~span{color:#050D19}
+.rsvp_popup .close_btn{position:absolute;top:8px;right:8px;padding:10px;font-size:20px;line-height:1;color:#666}
+/* ===== 참석 여부 입력창 (전체 화면) ===== */
+.modal_rsvp{position:fixed;top:0;left:50%;transform:translate(-50%,20px);width:100%;max-width:420px;height:100%;background:#fff;z-index:102;overflow-y:auto;opacity:0;visibility:hidden;transition:.3s}
+.modal_rsvp.active{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.modal_rsvp .modal_title{position:sticky;top:0;padding:15px 0;text-align:center;box-shadow:0 0 3px rgba(0,0,0,.2);background:#fff;z-index:2}
+.modal_rsvp .modal_title h2{font-size:var(--f-m);font-weight:400}
+.modal_rsvp .close_btn{position:absolute;top:50%;right:10px;transform:translateY(-50%);padding:10px;font-size:20px;line-height:1;color:#666}
+.modal_rsvp .form{padding:10px 20px 40px;text-align:left}
+.modal_rsvp .chk_title{margin:16px 0 8px;font-size:var(--f-ms)}
+.modal_rsvp .essential{color:#DD4241}
+.modal_rsvp .chk{display:flex;box-shadow:2px 2px 4px -1px rgba(0,0,0,.1);border-radius:5px}
+.modal_rsvp .chk input{display:none}
+.modal_rsvp .chk label{flex:1;height:36px;line-height:36px;border:1px solid #eae7e7;text-align:center;font-size:var(--f-ms);color:#999;cursor:pointer}
+.modal_rsvp .chk label:first-of-type{border-radius:5px 0 0 5px}.modal_rsvp .chk label:last-of-type{border-radius:0 5px 5px 0}
+.modal_rsvp .chk input:checked+label{color:var(--point1);box-shadow:inset 0 0 3px var(--point1);border-color:var(--point1);transition:.2s}
+.modal_rsvp input[type=text]{width:100%;height:36px;padding:0 8px;font:inherit;font-size:var(--f-ms);border:1px solid #eae7e7;border-radius:5px;background:transparent;outline:none;box-shadow:2px 2px 4px -1px rgba(0,0,0,.1)}
+.modal_rsvp textarea{width:100%;height:120px;padding:8px;font:inherit;font-size:var(--f-ms);border:1px solid #eae7e7;border-radius:5px;background:transparent;outline:none;resize:none;box-shadow:2px 2px 4px -1px rgba(0,0,0,.1)}
+.modal_rsvp .agree{margin-top:14px;font-size:var(--f-ms);display:flex;align-items:center;gap:4px;cursor:pointer}
+.modal_rsvp .agree input{display:none}
+.modal_rsvp .agree i{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;font-style:normal;font-size:11px;border:1px solid #eae7e7;color:transparent;box-shadow:var(--shadow);transition:.2s}
+.modal_rsvp .agree input:checked~i{color:#fff;background:var(--point2);border-color:transparent}
+.modal_rsvp .agree{flex-wrap:wrap}.modal_rsvp .agree small{color:#787575;font-size:var(--f-s);flex-basis:100%;padding-left:20px;margin-top:2px}
+.modal_rsvp .btn_box{padding:30px 0 0}
+.modal_rsvp .btn_box button{display:block;width:100%;padding:10px;background:var(--point2);color:#fff;border-radius:5px;box-shadow:2px 2px 4px -1px rgba(0,0,0,.2);font-size:var(--f-r)}
+#toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,8px);background:rgba(0,0,0,.75);color:#fff;padding:7px 16px;border-radius:999px;font-size:var(--f-s);opacity:0;transition:.3s;z-index:300;pointer-events:none}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<div id="loading"><div class="n">준모 · 세림</div><div class="d">2027. 01. 16</div></div>
+
+<!-- ===== 1. 커버 ===== -->
+<section class="cover">
+  <img src="사진/01_커버_세로1x2_1500x3000/main.jpg" data-alt="사진/01_커버_세로1x2_1500x3000/main" onerror="altExt(this)" onload="this.classList.add('ok')" alt="">
+  <div class="script"><svg class="hand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4644 1861"><defs><clipPath id="handClip"><path transform="translate(102 751)" d="M291 56Q261 56 251.5 37.5Q242 19 242 -3Q242 -29 252.5 -64.5Q263 -100 279.5 -137.5Q296 -175 313.5 -209.0Q331 -243 344 -266Q353 -281 373.5 -316.5Q394 -352 419.5 -397.0Q445 -442 469.0 -486.5Q493 -531 508.5 -565.0Q524 -599 524 -611Q524 -640 503.5 -651.0Q483 -662 454 -662Q408 -662 348.0 -642.5Q288 -623 226.5 -590.0Q165 -557 112.5 -514.5Q60 -472 28.0 -426.0Q-4 -380 -4 -336Q-4 -314 9.0 -302.5Q22 -291 42.0 -287.5Q62 -284 83 -284Q106 -284 127.5 -289.0Q149 -294 169 -301Q171 -302 173.0 -302.5Q175 -303 177 -303Q193 -303 193 -289Q193 -280 178.0 -273.5Q163 -267 142.5 -263.0Q122 -259 103.0 -257.0Q84 -255 76 -255Q47 -255 19.5 -262.5Q-8 -270 -25.0 -287.5Q-42 -305 -42 -335Q-42 -365 -26.5 -397.0Q-11 -429 8 -454Q32 -486 69.5 -518.0Q107 -550 149.0 -578.0Q191 -606 228 -625Q259 -642 298.5 -657.0Q338 -672 379.0 -681.5Q420 -691 457 -691Q501 -691 529.0 -673.0Q557 -655 557 -613V-611Q557 -595 541.5 -559.5Q526 -524 502.5 -479.0Q479 -434 453.0 -388.5Q427 -343 405.5 -306.5Q384 -270 374 -253Q362 -234 345.5 -201.5Q329 -169 313.0 -132.0Q297 -95 286.5 -61.5Q276 -28 276 -7Q276 4 281.0 14.5Q286 25 302 25Q328 25 366.0 0.5Q404 -24 446.5 -61.5Q489 -99 529.0 -140.5Q569 -182 600.5 -217.0Q632 -252 646 -270Q650 -287 659.5 -314.5Q669 -342 683.5 -373.0Q698 -404 716.5 -431.5Q735 -459 756.0 -476.5Q777 -494 800 -494Q808 -494 817.0 -490.5Q826 -487 826 -478Q826 -474 825 -472Q797 -416 758.0 -362.0Q719 -308 678 -258Q674 -236 671.5 -214.0Q669 -192 669 -169Q669 -137 677.0 -106.5Q685 -76 708.0 -56.0Q731 -36 776 -36Q828 -36 875.0 -62.5Q922 -89 954 -123Q995 -165 1027.5 -221.0Q1060 -277 1079.5 -337.5Q1099 -398 1099 -453Q1099 -484 1091.0 -509.0Q1083 -534 1052 -553Q1044 -558 1044 -565Q1044 -570 1048.5 -575.0Q1053 -580 1060 -580Q1064 -580 1068 -578Q1106 -560 1119.0 -526.0Q1132 -492 1132 -457Q1132 -411 1115.5 -351.5Q1099 -292 1067.5 -231.5Q1036 -171 992.0 -120.0Q948 -69 892.5 -37.5Q837 -6 773 -6Q726 -6 698.0 -26.0Q670 -46 656.5 -78.0Q643 -110 639.5 -145.5Q636 -181 637 -212Q620 -192 589.5 -159.0Q559 -126 520.5 -89.0Q482 -52 441.0 -19.0Q400 14 361.5 35.0Q323 56 291 56Z M1162 10Q1110 10 1089.5 -20.5Q1069 -51 1069 -92Q1069 -122 1084.0 -163.5Q1099 -205 1125.5 -245.0Q1152 -285 1187.0 -311.5Q1222 -338 1262 -338Q1288 -338 1303.5 -323.5Q1319 -309 1319 -287Q1319 -245 1292.0 -206.0Q1265 -167 1222.0 -142.0Q1179 -117 1130 -117Q1124 -117 1118.0 -117.5Q1112 -118 1106 -119Q1103 -106 1103 -89Q1103 -63 1115.5 -41.0Q1128 -19 1164 -19Q1194 -19 1222.0 -34.0Q1250 -49 1269 -68Q1288 -87 1301.0 -102.0Q1314 -117 1328.0 -136.5Q1342 -156 1363 -188Q1367 -195 1375 -195Q1389 -195 1389 -180Q1389 -175 1387 -172Q1360 -126 1327.0 -84.5Q1294 -43 1253.5 -16.5Q1213 10 1162 10ZM1137 -148Q1175 -148 1208.5 -168.5Q1242 -189 1263.5 -220.0Q1285 -251 1285 -283Q1285 -294 1279.5 -301.0Q1274 -308 1261 -308Q1235 -308 1211.0 -290.5Q1187 -273 1167.5 -246.5Q1148 -220 1134.5 -194.0Q1121 -168 1115 -150Q1120 -149 1125.5 -148.5Q1131 -148 1137 -148Z M1482 -448Q1476 -448 1476 -453Q1476 -459 1484.5 -471.5Q1493 -484 1502.5 -498.0Q1512 -512 1515 -521Q1526 -551 1526.5 -578.0Q1527 -605 1527 -636Q1527 -644 1532.0 -648.5Q1537 -653 1544 -653Q1551 -653 1557.0 -648.5Q1563 -644 1563 -636Q1563 -589 1546.5 -537.0Q1530 -485 1492 -453Q1490 -452 1487.5 -450.0Q1485 -448 1482 -448Z M1692 14Q1673 14 1659.5 2.0Q1646 -10 1646 -36Q1646 -57 1654.0 -79.5Q1662 -102 1669 -115Q1685 -147 1703.0 -174.5Q1721 -202 1730 -214Q1712 -213 1687.5 -223.0Q1663 -233 1653 -249Q1640 -230 1616.0 -187.5Q1592 -145 1555 -98Q1549 -90 1541 -90Q1526 -90 1526 -103Q1526 -108 1529 -112Q1544 -133 1566.5 -166.5Q1589 -200 1610.5 -236.5Q1632 -273 1645 -302Q1649 -311 1653.5 -321.0Q1658 -331 1662 -340Q1666 -347 1673.0 -352.5Q1680 -358 1689 -358Q1697 -358 1705.0 -351.5Q1713 -345 1713 -337Q1713 -328 1706.5 -314.5Q1700 -301 1693.0 -287.0Q1686 -273 1686 -262Q1686 -253 1701.0 -250.0Q1716 -247 1723 -247Q1750 -247 1768.0 -258.0Q1786 -269 1793 -269Q1799 -269 1803.5 -264.5Q1808 -260 1808 -255Q1808 -248 1802 -243Q1788 -230 1769.0 -206.0Q1750 -182 1731.0 -154.0Q1712 -126 1698 -99Q1694 -89 1686.5 -71.0Q1679 -53 1679 -37Q1679 -10 1698 -10Q1706 -10 1716.5 -16.0Q1727 -22 1737 -30Q1761 -52 1779.5 -73.5Q1798 -95 1817.0 -122.0Q1836 -149 1861 -187Q1865 -194 1875 -194Q1888 -194 1888 -182Q1888 -176 1882 -165Q1868 -140 1845.5 -110.0Q1823 -80 1799.5 -53.5Q1776 -27 1758 -13Q1726 14 1692 14Z M1930 10Q1878 10 1857.5 -20.5Q1837 -51 1837 -92Q1837 -122 1852.0 -163.5Q1867 -205 1893.5 -245.0Q1920 -285 1955.0 -311.5Q1990 -338 2030 -338Q2056 -338 2071.5 -323.5Q2087 -309 2087 -287Q2087 -245 2060.0 -206.0Q2033 -167 1990.0 -142.0Q1947 -117 1898 -117Q1892 -117 1886.0 -117.5Q1880 -118 1874 -119Q1871 -106 1871 -89Q1871 -63 1883.5 -41.0Q1896 -19 1932 -19Q1962 -19 1990.0 -34.0Q2018 -49 2037 -68Q2056 -87 2069.0 -102.0Q2082 -117 2096.0 -136.5Q2110 -156 2131 -188Q2135 -195 2143 -195Q2157 -195 2157 -180Q2157 -175 2155 -172Q2128 -126 2095.0 -84.5Q2062 -43 2021.5 -16.5Q1981 10 1930 10ZM1905 -148Q1943 -148 1976.5 -168.5Q2010 -189 2031.5 -220.0Q2053 -251 2053 -283Q2053 -294 2047.5 -301.0Q2042 -308 2029 -308Q2003 -308 1979.0 -290.5Q1955 -273 1935.5 -246.5Q1916 -220 1902.5 -194.0Q1889 -168 1883 -150Q1888 -149 1893.5 -148.5Q1899 -148 1905 -148Z M2229 373Q2200 373 2180.5 359.5Q2161 346 2156 318Q2152 289 2178.0 257.0Q2204 225 2243 194Q2274 169 2308.0 147.5Q2342 126 2371.5 108.5Q2401 91 2419 81Q2457 58 2497.0 33.5Q2537 9 2574 -14Q2586 -50 2589.5 -86.5Q2593 -123 2592 -158Q2581 -141 2560.5 -113.0Q2540 -85 2512.5 -57.0Q2485 -29 2453.0 -9.5Q2421 10 2387 10Q2344 10 2328.0 -15.0Q2312 -40 2312 -74Q2312 -104 2320.5 -135.0Q2329 -166 2339 -185Q2359 -226 2389.5 -265.0Q2420 -304 2458.5 -329.0Q2497 -354 2537 -354Q2566 -354 2579.5 -337.0Q2593 -320 2593 -298Q2593 -291 2589.0 -276.0Q2585 -261 2578.5 -245.0Q2572 -229 2563.0 -217.5Q2554 -206 2543 -206Q2536 -206 2531.0 -210.5Q2526 -215 2526 -220Q2526 -223 2534.0 -234.0Q2542 -245 2550.0 -261.0Q2558 -277 2558 -295Q2558 -306 2552.5 -315.0Q2547 -324 2532 -324Q2501 -324 2470.5 -302.0Q2440 -280 2415.0 -247.0Q2390 -214 2373 -179Q2366 -164 2357.0 -134.0Q2348 -104 2348 -76Q2348 -52 2358.0 -35.5Q2368 -19 2393 -19Q2415 -19 2440.5 -36.0Q2466 -53 2492.0 -79.5Q2518 -106 2539.5 -134.5Q2561 -163 2574.5 -186.0Q2588 -209 2589 -219Q2590 -224 2595.0 -230.0Q2600 -236 2607 -236Q2615 -236 2618.0 -231.0Q2621 -226 2622 -221Q2629 -194 2629 -158Q2629 -129 2625.5 -99.0Q2622 -69 2618 -45Q2652 -73 2680.5 -112.5Q2709 -152 2732 -187Q2737 -195 2744 -195Q2749 -195 2753.5 -191.0Q2758 -187 2758 -181Q2758 -177 2755 -171Q2724 -121 2689.5 -75.5Q2655 -30 2602 5Q2574 85 2525.5 156.5Q2477 228 2418.5 280.5Q2360 333 2301 357Q2282 365 2263.5 369.0Q2245 373 2229 373ZM2229 348Q2241 348 2255.0 344.0Q2269 340 2284 334Q2344 307 2393.5 263.5Q2443 220 2480.5 167.0Q2518 114 2541 61Q2543 55 2546.0 49.0Q2549 43 2552 37Q2523 53 2496.0 71.5Q2469 90 2440 106Q2424 115 2393.0 133.0Q2362 151 2326.0 173.5Q2290 196 2259 221Q2229 244 2209.0 267.0Q2189 290 2189 310Q2189 330 2200.5 339.0Q2212 348 2229 348Z M2800 10Q2748 10 2727.5 -20.5Q2707 -51 2707 -92Q2707 -122 2722.0 -163.5Q2737 -205 2763.5 -245.0Q2790 -285 2825.0 -311.5Q2860 -338 2900 -338Q2926 -338 2941.5 -323.5Q2957 -309 2957 -287Q2957 -245 2930.0 -206.0Q2903 -167 2860.0 -142.0Q2817 -117 2768 -117Q2762 -117 2756.0 -117.5Q2750 -118 2744 -119Q2741 -106 2741 -89Q2741 -63 2753.5 -41.0Q2766 -19 2802 -19Q2832 -19 2860.0 -34.0Q2888 -49 2907 -68Q2926 -87 2939.0 -102.0Q2952 -117 2966.0 -136.5Q2980 -156 3001 -188Q3005 -195 3013 -195Q3027 -195 3027 -180Q3027 -175 3025 -172Q2998 -126 2965.0 -84.5Q2932 -43 2891.5 -16.5Q2851 10 2800 10ZM2775 -148Q2813 -148 2846.5 -168.5Q2880 -189 2901.5 -220.0Q2923 -251 2923 -283Q2923 -294 2917.5 -301.0Q2912 -308 2899 -308Q2873 -308 2849.0 -290.5Q2825 -273 2805.5 -246.5Q2786 -220 2772.5 -194.0Q2759 -168 2753 -150Q2758 -149 2763.5 -148.5Q2769 -148 2775 -148Z M3033 36Q3013 36 3003.0 23.5Q2993 11 2990.0 -6.0Q2987 -23 2987 -36Q2987 -77 3002.0 -128.0Q3017 -179 3037.5 -230.0Q3058 -281 3075 -321Q3057 -320 3035.5 -315.0Q3014 -310 2997 -310Q2983 -310 2983 -322Q2983 -339 3001 -342Q3023 -347 3046.0 -350.0Q3069 -353 3091 -355Q3097 -366 3108.0 -389.0Q3119 -412 3133.0 -438.5Q3147 -465 3160.5 -486.5Q3174 -508 3183 -517Q3189 -523 3196 -523Q3203 -523 3208.0 -519.0Q3213 -515 3213 -509Q3213 -506 3210 -501Q3185 -470 3168.0 -433.0Q3151 -396 3134 -361Q3152 -363 3172.0 -365.0Q3192 -367 3211 -367Q3217 -367 3222.5 -365.0Q3228 -363 3228 -356Q3228 -350 3222.5 -346.0Q3217 -342 3210 -340Q3188 -336 3164.5 -333.5Q3141 -331 3118 -328Q3105 -298 3088.0 -261.0Q3071 -224 3055.5 -184.5Q3040 -145 3030.0 -108.0Q3020 -71 3020 -41Q3020 -36 3020.5 -24.5Q3021 -13 3025.0 -4.0Q3029 5 3037 5Q3054 5 3061.0 -4.0Q3068 -13 3077 -13Q3084 -13 3089.5 -9.0Q3095 -5 3095 1Q3095 10 3083.5 18.0Q3072 26 3057.0 31.0Q3042 36 3033 36Z M3233 36Q3213 36 3203.0 23.5Q3193 11 3190.0 -6.0Q3187 -23 3187 -36Q3187 -77 3202.0 -128.0Q3217 -179 3237.5 -230.0Q3258 -281 3275 -321Q3257 -320 3235.5 -315.0Q3214 -310 3197 -310Q3183 -310 3183 -322Q3183 -339 3201 -342Q3223 -347 3246.0 -350.0Q3269 -353 3291 -355Q3297 -366 3308.0 -389.0Q3319 -412 3333.0 -438.5Q3347 -465 3360.5 -486.5Q3374 -508 3383 -517Q3389 -523 3396 -523Q3403 -523 3408.0 -519.0Q3413 -515 3413 -509Q3413 -506 3410 -501Q3385 -470 3368.0 -433.0Q3351 -396 3334 -361Q3352 -363 3372.0 -365.0Q3392 -367 3411 -367Q3417 -367 3422.5 -365.0Q3428 -363 3428 -356Q3428 -350 3422.5 -346.0Q3417 -342 3410 -340Q3388 -336 3364.5 -333.5Q3341 -331 3318 -328Q3305 -298 3288.0 -261.0Q3271 -224 3255.5 -184.5Q3240 -145 3230.0 -108.0Q3220 -71 3220 -41Q3220 -36 3220.5 -24.5Q3221 -13 3225.0 -4.0Q3229 5 3237 5Q3254 5 3261.0 -4.0Q3268 -13 3277 -13Q3284 -13 3289.5 -9.0Q3295 -5 3295 1Q3295 10 3283.5 18.0Q3272 26 3257.0 31.0Q3242 36 3233 36Z M3553 -408Q3548 -408 3542.0 -410.0Q3536 -412 3536 -419Q3536 -424 3539 -428Q3547 -443 3568.5 -454.0Q3590 -465 3601 -465Q3606 -465 3612.0 -462.5Q3618 -460 3618 -453Q3618 -436 3597.5 -422.0Q3577 -408 3553 -408ZM3441 1Q3407 1 3387.0 -18.0Q3367 -37 3367 -71Q3367 -91 3371.0 -110.5Q3375 -130 3382 -149Q3386 -160 3398.5 -185.5Q3411 -211 3428.0 -239.5Q3445 -268 3461.0 -288.0Q3477 -308 3489 -308Q3494 -308 3502.5 -304.5Q3511 -301 3511 -294Q3511 -290 3507 -284Q3484 -258 3459.0 -222.0Q3434 -186 3417.0 -147.0Q3400 -108 3400 -72Q3400 -26 3444 -26Q3474 -26 3504.5 -55.0Q3535 -84 3572 -133Q3583 -147 3591.5 -160.5Q3600 -174 3607 -184Q3614 -191 3622 -191Q3634 -191 3634 -182Q3634 -171 3618.0 -147.0Q3602 -123 3582 -97Q3543 -49 3514.0 -24.0Q3485 1 3441 1Z M3662 3Q3657 3 3651.0 0.0Q3645 -3 3645 -8Q3645 -16 3648 -22Q3659 -46 3676.5 -81.0Q3694 -116 3711.5 -153.5Q3729 -191 3741.5 -224.0Q3754 -257 3754 -277Q3754 -283 3751.5 -288.5Q3749 -294 3741 -294Q3729 -294 3717.5 -284.0Q3706 -274 3697.0 -261.5Q3688 -249 3682 -241Q3662 -214 3648.0 -191.5Q3634 -169 3619.5 -147.5Q3605 -126 3584 -100Q3581 -96 3577.5 -93.5Q3574 -91 3568 -91Q3562 -91 3557.5 -97.0Q3553 -103 3556 -108Q3578 -143 3599.0 -174.5Q3620 -206 3636.0 -229.0Q3652 -252 3658 -260Q3675 -282 3693.5 -302.0Q3712 -322 3744 -322Q3771 -322 3781.5 -307.0Q3792 -292 3792 -272Q3792 -236 3762 -179Q3799 -218 3841.5 -250.0Q3884 -282 3921.0 -303.5Q3958 -325 3977 -330Q3986 -333 3995.5 -335.0Q4005 -337 4013 -337Q4023 -337 4029.5 -332.0Q4036 -327 4036 -313Q4036 -299 4018.0 -273.5Q4000 -248 3974.5 -215.5Q3949 -183 3926.0 -150.0Q3903 -117 3893 -88Q3890 -81 3889.0 -74.5Q3888 -68 3888 -63Q3888 -36 3913 -36Q3929 -36 3953 -52Q3967 -61 3980.5 -72.5Q3994 -84 4001 -93Q4016 -110 4025.5 -122.0Q4035 -134 4044.5 -148.5Q4054 -163 4069 -185Q4072 -190 4075.0 -192.0Q4078 -194 4085 -194Q4096 -194 4096 -180Q4096 -174 4087.0 -159.5Q4078 -145 4065.5 -127.5Q4053 -110 4041.5 -95.5Q4030 -81 4025 -75Q4014 -62 3997.5 -48.0Q3981 -34 3964 -24Q3948 -15 3931.0 -11.0Q3914 -7 3898 -7Q3872 -7 3860.5 -22.0Q3849 -37 3849 -54Q3849 -80 3866.5 -113.5Q3884 -147 3908.5 -180.5Q3933 -214 3954.5 -241.0Q3976 -268 3984 -280Q3986 -283 3987.0 -285.5Q3988 -288 3988 -290Q3988 -298 3976 -298Q3970 -298 3962 -295Q3921 -278 3876.5 -245.0Q3832 -212 3794.5 -173.5Q3757 -135 3735 -101L3695 -38Q3690 -30 3686.0 -21.5Q3682 -13 3677 -5Q3671 3 3662 3Z M3953 373Q3924 373 3904.5 359.5Q3885 346 3880 318Q3876 289 3902.0 257.0Q3928 225 3967 194Q3998 169 4032.0 147.5Q4066 126 4095.5 108.5Q4125 91 4143 81Q4181 58 4221.0 33.5Q4261 9 4298 -14Q4310 -50 4313.5 -86.5Q4317 -123 4316 -158Q4305 -141 4284.5 -113.0Q4264 -85 4236.5 -57.0Q4209 -29 4177.0 -9.5Q4145 10 4111 10Q4068 10 4052.0 -15.0Q4036 -40 4036 -74Q4036 -104 4044.5 -135.0Q4053 -166 4063 -185Q4083 -226 4113.5 -265.0Q4144 -304 4182.5 -329.0Q4221 -354 4261 -354Q4290 -354 4303.5 -337.0Q4317 -320 4317 -298Q4317 -291 4313.0 -276.0Q4309 -261 4302.5 -245.0Q4296 -229 4287.0 -217.5Q4278 -206 4267 -206Q4260 -206 4255.0 -210.5Q4250 -215 4250 -220Q4250 -223 4258.0 -234.0Q4266 -245 4274.0 -261.0Q4282 -277 4282 -295Q4282 -306 4276.5 -315.0Q4271 -324 4256 -324Q4225 -324 4194.5 -302.0Q4164 -280 4139.0 -247.0Q4114 -214 4097 -179Q4090 -164 4081.0 -134.0Q4072 -104 4072 -76Q4072 -52 4082.0 -35.5Q4092 -19 4117 -19Q4139 -19 4164.5 -36.0Q4190 -53 4216.0 -79.5Q4242 -106 4263.5 -134.5Q4285 -163 4298.5 -186.0Q4312 -209 4313 -219Q4314 -224 4319.0 -230.0Q4324 -236 4331 -236Q4339 -236 4342.0 -231.0Q4345 -226 4346 -221Q4353 -194 4353 -158Q4353 -129 4349.5 -99.0Q4346 -69 4342 -45Q4376 -73 4404.5 -112.5Q4433 -152 4456 -187Q4461 -195 4468 -195Q4473 -195 4477.5 -191.0Q4482 -187 4482 -181Q4482 -177 4479 -171Q4448 -121 4413.5 -75.5Q4379 -30 4326 5Q4298 85 4249.5 156.5Q4201 228 4142.5 280.5Q4084 333 4025 357Q4006 365 3987.5 369.0Q3969 373 3953 373ZM3953 348Q3965 348 3979.0 344.0Q3993 340 4008 334Q4068 307 4117.5 263.5Q4167 220 4204.5 167.0Q4242 114 4265 61Q4267 55 4270.0 49.0Q4273 43 4276 37Q4247 53 4220.0 71.5Q4193 90 4164 106Q4148 115 4117.0 133.0Q4086 151 4050.0 173.5Q4014 196 3983 221Q3953 244 3933.0 267.0Q3913 290 3913 310Q3913 330 3924.5 339.0Q3936 348 3953 348Z"/><path transform="translate(826 1701)" d="M893 100Q888 100 885 99Q855 87 845.5 68.0Q836 49 836 21Q836 4 838.0 -13.0Q840 -30 843 -47Q865 -178 921.0 -303.0Q977 -428 1055 -540Q1060 -547 1060 -555Q1060 -562 1054.5 -565.0Q1049 -568 1041 -568Q1024 -568 1007.5 -558.0Q991 -548 980 -538Q930 -495 881.5 -437.5Q833 -380 793 -330Q759 -285 726.0 -239.0Q693 -193 662 -146Q649 -125 635.5 -101.5Q622 -78 608 -58Q603 -48 592 -48Q585 -48 580.0 -52.5Q575 -57 575 -63Q575 -65 575.5 -66.0Q576 -67 576 -68Q610 -166 642.5 -264.0Q675 -362 706 -460Q709 -469 711.0 -478.0Q713 -487 713 -496Q713 -507 708.5 -516.0Q704 -525 690 -525Q678 -525 666.5 -519.0Q655 -513 646 -507Q630 -496 615.0 -482.5Q600 -469 586 -456Q531 -403 481.5 -344.5Q432 -286 394 -222Q358 -159 321.5 -96.0Q285 -33 252 32Q245 35 237 35Q232 35 225.0 33.0Q218 31 218 24V20Q242 -42 274.5 -102.5Q307 -163 338 -222Q351 -247 372.5 -285.5Q394 -324 418.5 -370.0Q443 -416 464.5 -462.0Q486 -508 499.5 -547.5Q513 -587 513 -613Q513 -643 494.0 -656.0Q475 -669 442 -669Q411 -669 373.5 -660.0Q336 -651 300.5 -637.5Q265 -624 238 -610Q201 -592 160.0 -561.5Q119 -531 83.0 -493.5Q47 -456 24.5 -415.0Q2 -374 2 -334Q2 -304 20.0 -285.0Q38 -266 75 -266Q99 -266 114.5 -274.0Q130 -282 137 -282Q144 -282 149.0 -277.0Q154 -272 154 -266Q154 -257 138.0 -250.5Q122 -244 103.0 -241.0Q84 -238 76 -238Q24 -238 -2.0 -265.5Q-28 -293 -28 -336Q-28 -365 -18.0 -395.0Q-8 -425 9 -450Q33 -485 69.5 -520.0Q106 -555 148.5 -585.0Q191 -615 230 -635Q274 -658 333.5 -675.0Q393 -692 445 -692Q487 -692 516.5 -675.5Q546 -659 546 -618Q546 -592 534.5 -555.5Q523 -519 505.5 -479.5Q488 -440 470.5 -404.5Q453 -369 440 -345L445 -343Q457 -358 478.5 -384.0Q500 -410 527.5 -440.0Q555 -470 585.0 -496.5Q615 -523 643.5 -540.0Q672 -557 695 -557Q724 -557 734.5 -536.0Q745 -515 745 -494Q745 -484 743.0 -474.0Q741 -464 739 -453Q735 -433 727.5 -413.0Q720 -393 714 -373L660 -210L665 -208Q702 -263 750.5 -327.0Q799 -391 853.0 -452.0Q907 -513 957 -557Q975 -574 999.5 -587.5Q1024 -601 1052 -601Q1072 -601 1085.0 -591.5Q1098 -582 1098 -564Q1098 -554 1093.5 -544.0Q1089 -534 1083 -525Q1036 -456 994.5 -374.5Q953 -293 922.5 -208.0Q892 -123 876 -42Q873 -28 871.0 -13.0Q869 2 869 16Q869 39 874.5 50.0Q880 61 887.5 66.0Q895 71 900.5 74.5Q906 78 906 87Q906 100 893 100Z M1022 4Q989 4 976.5 -13.5Q964 -31 964 -56Q964 -80 972.0 -106.0Q980 -132 989.5 -154.5Q999 -177 1005 -188Q1023 -219 1045.5 -248.0Q1068 -277 1094 -299Q1120 -322 1147.5 -334.5Q1175 -347 1203 -347Q1251 -347 1271.0 -321.5Q1291 -296 1291 -267Q1291 -257 1288 -246Q1284 -231 1278.5 -220.0Q1273 -209 1265 -209Q1258 -209 1252.0 -216.0Q1246 -223 1248 -230Q1250 -237 1253.5 -244.0Q1257 -251 1258 -258Q1259 -263 1259.5 -267.0Q1260 -271 1260 -275Q1260 -302 1242.5 -312.5Q1225 -323 1205 -323Q1182 -323 1157.5 -310.0Q1133 -297 1115 -280Q1093 -258 1071.0 -229.0Q1049 -200 1033 -170Q1031 -165 1022.5 -146.0Q1014 -127 1006.5 -103.5Q999 -80 999 -60Q999 -46 1005.5 -36.0Q1012 -26 1028 -26Q1045 -26 1067.5 -42.0Q1090 -58 1113.5 -81.5Q1137 -105 1156.0 -127.0Q1175 -149 1184 -161Q1190 -169 1195.5 -178.5Q1201 -188 1207 -196Q1210 -200 1219 -200Q1227 -200 1235.5 -195.5Q1244 -191 1242 -183Q1238 -176 1227.5 -152.5Q1217 -129 1208.0 -101.5Q1199 -74 1199 -53Q1199 -27 1215 -23Q1226 -21 1238.5 -31.0Q1251 -41 1261.5 -54.0Q1272 -67 1277 -73Q1298 -101 1316.5 -130.5Q1335 -160 1354 -186Q1360 -194 1368 -194Q1382 -194 1382 -179Q1382 -174 1369.0 -153.5Q1356 -133 1337.5 -107.0Q1319 -81 1303 -60Q1287 -39 1267.0 -19.0Q1247 1 1216 1Q1187 1 1176.5 -12.0Q1166 -25 1166 -41Q1166 -55 1169.0 -70.5Q1172 -86 1175 -97L1171 -100Q1162 -89 1144.0 -72.0Q1126 -55 1104.0 -37.5Q1082 -20 1060.5 -8.0Q1039 4 1022 4Z M1467 14Q1448 14 1434.5 2.0Q1421 -10 1421 -36Q1421 -57 1429.0 -79.5Q1437 -102 1444 -115Q1460 -147 1478.0 -174.5Q1496 -202 1505 -214Q1487 -213 1462.5 -223.0Q1438 -233 1428 -249Q1415 -230 1391.0 -187.5Q1367 -145 1330 -98Q1324 -90 1316 -90Q1301 -90 1301 -103Q1301 -108 1304 -112Q1319 -133 1341.5 -166.5Q1364 -200 1385.5 -236.5Q1407 -273 1420 -302Q1424 -311 1428.5 -321.0Q1433 -331 1437 -340Q1441 -347 1448.0 -352.5Q1455 -358 1464 -358Q1472 -358 1480.0 -351.5Q1488 -345 1488 -337Q1488 -328 1481.5 -314.5Q1475 -301 1468.0 -287.0Q1461 -273 1461 -262Q1461 -253 1476.0 -250.0Q1491 -247 1498 -247Q1525 -247 1543.0 -258.0Q1561 -269 1568 -269Q1574 -269 1578.5 -264.5Q1583 -260 1583 -255Q1583 -248 1577 -243Q1563 -230 1544.0 -206.0Q1525 -182 1506.0 -154.0Q1487 -126 1473 -99Q1469 -89 1461.5 -71.0Q1454 -53 1454 -37Q1454 -10 1473 -10Q1481 -10 1491.5 -16.0Q1502 -22 1512 -30Q1536 -52 1554.5 -73.5Q1573 -95 1592.0 -122.0Q1611 -149 1636 -187Q1640 -194 1650 -194Q1663 -194 1663 -182Q1663 -176 1657 -165Q1643 -140 1620.5 -110.0Q1598 -80 1574.5 -53.5Q1551 -27 1533 -13Q1501 14 1467 14Z M1748 14Q1729 14 1715.5 2.0Q1702 -10 1702 -36Q1702 -57 1710.0 -79.5Q1718 -102 1725 -115Q1741 -147 1759.0 -174.5Q1777 -202 1786 -214Q1768 -213 1743.5 -223.0Q1719 -233 1709 -249Q1696 -230 1672.0 -187.5Q1648 -145 1611 -98Q1605 -90 1597 -90Q1582 -90 1582 -103Q1582 -108 1585 -112Q1600 -133 1622.5 -166.5Q1645 -200 1666.5 -236.5Q1688 -273 1701 -302Q1705 -311 1709.5 -321.0Q1714 -331 1718 -340Q1722 -347 1729.0 -352.5Q1736 -358 1745 -358Q1753 -358 1761.0 -351.5Q1769 -345 1769 -337Q1769 -328 1762.5 -314.5Q1756 -301 1749.0 -287.0Q1742 -273 1742 -262Q1742 -253 1757.0 -250.0Q1772 -247 1779 -247Q1806 -247 1824.0 -258.0Q1842 -269 1849 -269Q1855 -269 1859.5 -264.5Q1864 -260 1864 -255Q1864 -248 1858 -243Q1844 -230 1825.0 -206.0Q1806 -182 1787.0 -154.0Q1768 -126 1754 -99Q1750 -89 1742.5 -71.0Q1735 -53 1735 -37Q1735 -10 1754 -10Q1762 -10 1772.5 -16.0Q1783 -22 1793 -30Q1817 -52 1835.5 -73.5Q1854 -95 1873.0 -122.0Q1892 -149 1917 -187Q1921 -194 1931 -194Q1944 -194 1944 -182Q1944 -176 1938 -165Q1924 -140 1901.5 -110.0Q1879 -80 1855.5 -53.5Q1832 -27 1814 -13Q1782 14 1748 14Z M2070 -408Q2065 -408 2059.0 -410.0Q2053 -412 2053 -419Q2053 -424 2056 -428Q2064 -443 2085.5 -454.0Q2107 -465 2118 -465Q2123 -465 2129.0 -462.5Q2135 -460 2135 -453Q2135 -436 2114.5 -422.0Q2094 -408 2070 -408ZM1958 1Q1924 1 1904.0 -18.0Q1884 -37 1884 -71Q1884 -91 1888.0 -110.5Q1892 -130 1899 -149Q1903 -160 1915.5 -185.5Q1928 -211 1945.0 -239.5Q1962 -268 1978.0 -288.0Q1994 -308 2006 -308Q2011 -308 2019.5 -304.5Q2028 -301 2028 -294Q2028 -290 2024 -284Q2001 -258 1976.0 -222.0Q1951 -186 1934.0 -147.0Q1917 -108 1917 -72Q1917 -26 1961 -26Q1991 -26 2021.5 -55.0Q2052 -84 2089 -133Q2100 -147 2108.5 -160.5Q2117 -174 2124 -184Q2131 -191 2139 -191Q2151 -191 2151 -182Q2151 -171 2135.0 -147.0Q2119 -123 2099 -97Q2060 -49 2031.0 -24.0Q2002 1 1958 1Z M2194 10Q2142 10 2121.5 -20.5Q2101 -51 2101 -92Q2101 -122 2116.0 -163.5Q2131 -205 2157.5 -245.0Q2184 -285 2219.0 -311.5Q2254 -338 2294 -338Q2320 -338 2335.5 -323.5Q2351 -309 2351 -287Q2351 -245 2324.0 -206.0Q2297 -167 2254.0 -142.0Q2211 -117 2162 -117Q2156 -117 2150.0 -117.5Q2144 -118 2138 -119Q2135 -106 2135 -89Q2135 -63 2147.5 -41.0Q2160 -19 2196 -19Q2226 -19 2254.0 -34.0Q2282 -49 2301 -68Q2320 -87 2333.0 -102.0Q2346 -117 2360.0 -136.5Q2374 -156 2395 -188Q2399 -195 2407 -195Q2421 -195 2421 -180Q2421 -175 2419 -172Q2392 -126 2359.0 -84.5Q2326 -43 2285.5 -16.5Q2245 10 2194 10ZM2169 -148Q2207 -148 2240.5 -168.5Q2274 -189 2295.5 -220.0Q2317 -251 2317 -283Q2317 -294 2311.5 -301.0Q2306 -308 2293 -308Q2267 -308 2243.0 -290.5Q2219 -273 2199.5 -246.5Q2180 -220 2166.5 -194.0Q2153 -168 2147 -150Q2152 -149 2157.5 -148.5Q2163 -148 2169 -148Z M2411 15Q2378 15 2365.0 -7.0Q2352 -29 2352 -54Q2352 -83 2364.5 -120.0Q2377 -157 2399.0 -195.0Q2421 -233 2450.0 -265.0Q2479 -297 2513.5 -317.0Q2548 -337 2584 -337Q2606 -337 2619.5 -329.0Q2633 -321 2645 -307Q2666 -341 2692.0 -389.5Q2718 -438 2745.0 -487.5Q2772 -537 2794 -573Q2804 -590 2815.0 -596.0Q2826 -602 2836 -602Q2844 -602 2849.0 -598.0Q2854 -594 2854 -581Q2854 -574 2841.5 -551.5Q2829 -529 2809.0 -498.0Q2789 -467 2766.0 -433.0Q2743 -399 2722.5 -368.0Q2702 -337 2689 -316Q2679 -300 2662.0 -267.5Q2645 -235 2627.0 -196.0Q2609 -157 2597.0 -120.0Q2585 -83 2585 -59Q2585 -46 2590.0 -37.0Q2595 -28 2605 -28Q2616 -28 2628.0 -37.0Q2640 -46 2650.0 -57.0Q2660 -68 2664 -74Q2668 -79 2683.0 -100.0Q2698 -121 2715.5 -145.5Q2733 -170 2742 -184Q2747 -192 2756 -192Q2769 -192 2769 -177Q2769 -175 2765.0 -168.5Q2761 -162 2755 -152Q2707 -78 2673.0 -39.0Q2639 0 2601 0Q2598 0 2594.5 0.0Q2591 0 2588 -1Q2568 -5 2560.5 -23.0Q2553 -41 2553 -60Q2553 -69 2554.5 -79.5Q2556 -90 2560 -108Q2541 -85 2518.0 -58.5Q2495 -32 2472.5 -12.0Q2450 8 2433 12Q2423 15 2411 15ZM2415 -16Q2430 -16 2450.5 -31.5Q2471 -47 2492.5 -71.0Q2514 -95 2533.5 -122.0Q2553 -149 2567.5 -171.5Q2582 -194 2588 -206L2626 -281Q2618 -292 2608.5 -300.0Q2599 -308 2583 -308Q2552 -308 2523.0 -289.5Q2494 -271 2469.5 -241.5Q2445 -212 2427.0 -177.5Q2409 -143 2399.0 -110.5Q2389 -78 2389 -54Q2389 -43 2393.5 -29.5Q2398 -16 2415 -16Z M3003 -580Q3009 -580 3014.0 -576.5Q3019 -573 3018 -566Q3018 -563 3004.5 -532.0Q2991 -501 2971.5 -455.0Q2952 -409 2932 -358Q2915 -315 2900.5 -275.0Q2886 -235 2877.0 -208.5Q2868 -182 2865 -176Q2860 -166 2848 -166Q2844 -166 2839.0 -169.5Q2834 -173 2835 -180Q2836 -184 2846.0 -213.5Q2856 -243 2873.0 -288.5Q2890 -334 2909 -383Q2927 -428 2944.0 -468.5Q2961 -509 2973.5 -537.0Q2986 -565 2988 -570Q2993 -580 3003 -580ZM2809 -70Q2823 -70 2833.5 -59.0Q2844 -48 2843 -34Q2842 -20 2831.5 -10.0Q2821 0 2807 0Q2793 0 2782.5 -10.0Q2772 -20 2773 -34Q2774 -48 2784.5 -59.0Q2795 -70 2809 -70Z"/></clipPath></defs><g clip-path="url(#handClip)"><path class="hs" transform="translate(102 751)" d="M291 56Q261 56 251.5 37.5Q242 19 242 -3Q242 -29 252.5 -64.5Q263 -100 279.5 -137.5Q296 -175 313.5 -209.0Q331 -243 344 -266Q353 -281 373.5 -316.5Q394 -352 419.5 -397.0Q445 -442 469.0 -486.5Q493 -531 508.5 -565.0Q524 -599 524 -611Q524 -640 503.5 -651.0Q483 -662 454 -662Q408 -662 348.0 -642.5Q288 -623 226.5 -590.0Q165 -557 112.5 -514.5Q60 -472 28.0 -426.0Q-4 -380 -4 -336Q-4 -314 9.0 -302.5Q22 -291 42.0 -287.5Q62 -284 83 -284Q106 -284 127.5 -289.0Q149 -294 169 -301Q171 -302 173.0 -302.5Q175 -303 177 -303Q193 -303 193 -289Q193 -280 178.0 -273.5Q163 -267 142.5 -263.0Q122 -259 103.0 -257.0Q84 -255 76 -255Q47 -255 19.5 -262.5Q-8 -270 -25.0 -287.5Q-42 -305 -42 -335Q-42 -365 -26.5 -397.0Q-11 -429 8 -454Q32 -486 69.5 -518.0Q107 -550 149.0 -578.0Q191 -606 228 -625Q259 -642 298.5 -657.0Q338 -672 379.0 -681.5Q420 -691 457 -691Q501 -691 529.0 -673.0Q557 -655 557 -613V-611Q557 -595 541.5 -559.5Q526 -524 502.5 -479.0Q479 -434 453.0 -388.5Q427 -343 405.5 -306.5Q384 -270 374 -253Q362 -234 345.5 -201.5Q329 -169 313.0 -132.0Q297 -95 286.5 -61.5Q276 -28 276 -7Q276 4 281.0 14.5Q286 25 302 25Q328 25 366.0 0.5Q404 -24 446.5 -61.5Q489 -99 529.0 -140.5Q569 -182 600.5 -217.0Q632 -252 646 -270Q650 -287 659.5 -314.5Q669 -342 683.5 -373.0Q698 -404 716.5 -431.5Q735 -459 756.0 -476.5Q777 -494 800 -494Q808 -494 817.0 -490.5Q826 -487 826 -478Q826 -474 825 -472Q797 -416 758.0 -362.0Q719 -308 678 -258Q674 -236 671.5 -214.0Q669 -192 669 -169Q669 -137 677.0 -106.5Q685 -76 708.0 -56.0Q731 -36 776 -36Q828 -36 875.0 -62.5Q922 -89 954 -123Q995 -165 1027.5 -221.0Q1060 -277 1079.5 -337.5Q1099 -398 1099 -453Q1099 -484 1091.0 -509.0Q1083 -534 1052 -553Q1044 -558 1044 -565Q1044 -570 1048.5 -575.0Q1053 -580 1060 -580Q1064 -580 1068 -578Q1106 -560 1119.0 -526.0Q1132 -492 1132 -457Q1132 -411 1115.5 -351.5Q1099 -292 1067.5 -231.5Q1036 -171 992.0 -120.0Q948 -69 892.5 -37.5Q837 -6 773 -6Q726 -6 698.0 -26.0Q670 -46 656.5 -78.0Q643 -110 639.5 -145.5Q636 -181 637 -212Q620 -192 589.5 -159.0Q559 -126 520.5 -89.0Q482 -52 441.0 -19.0Q400 14 361.5 35.0Q323 56 291 56Z M1162 10Q1110 10 1089.5 -20.5Q1069 -51 1069 -92Q1069 -122 1084.0 -163.5Q1099 -205 1125.5 -245.0Q1152 -285 1187.0 -311.5Q1222 -338 1262 -338Q1288 -338 1303.5 -323.5Q1319 -309 1319 -287Q1319 -245 1292.0 -206.0Q1265 -167 1222.0 -142.0Q1179 -117 1130 -117Q1124 -117 1118.0 -117.5Q1112 -118 1106 -119Q1103 -106 1103 -89Q1103 -63 1115.5 -41.0Q1128 -19 1164 -19Q1194 -19 1222.0 -34.0Q1250 -49 1269 -68Q1288 -87 1301.0 -102.0Q1314 -117 1328.0 -136.5Q1342 -156 1363 -188Q1367 -195 1375 -195Q1389 -195 1389 -180Q1389 -175 1387 -172Q1360 -126 1327.0 -84.5Q1294 -43 1253.5 -16.5Q1213 10 1162 10ZM1137 -148Q1175 -148 1208.5 -168.5Q1242 -189 1263.5 -220.0Q1285 -251 1285 -283Q1285 -294 1279.5 -301.0Q1274 -308 1261 -308Q1235 -308 1211.0 -290.5Q1187 -273 1167.5 -246.5Q1148 -220 1134.5 -194.0Q1121 -168 1115 -150Q1120 -149 1125.5 -148.5Q1131 -148 1137 -148Z M1482 -448Q1476 -448 1476 -453Q1476 -459 1484.5 -471.5Q1493 -484 1502.5 -498.0Q1512 -512 1515 -521Q1526 -551 1526.5 -578.0Q1527 -605 1527 -636Q1527 -644 1532.0 -648.5Q1537 -653 1544 -653Q1551 -653 1557.0 -648.5Q1563 -644 1563 -636Q1563 -589 1546.5 -537.0Q1530 -485 1492 -453Q1490 -452 1487.5 -450.0Q1485 -448 1482 -448Z M1692 14Q1673 14 1659.5 2.0Q1646 -10 1646 -36Q1646 -57 1654.0 -79.5Q1662 -102 1669 -115Q1685 -147 1703.0 -174.5Q1721 -202 1730 -214Q1712 -213 1687.5 -223.0Q1663 -233 1653 -249Q1640 -230 1616.0 -187.5Q1592 -145 1555 -98Q1549 -90 1541 -90Q1526 -90 1526 -103Q1526 -108 1529 -112Q1544 -133 1566.5 -166.5Q1589 -200 1610.5 -236.5Q1632 -273 1645 -302Q1649 -311 1653.5 -321.0Q1658 -331 1662 -340Q1666 -347 1673.0 -352.5Q1680 -358 1689 -358Q1697 -358 1705.0 -351.5Q1713 -345 1713 -337Q1713 -328 1706.5 -314.5Q1700 -301 1693.0 -287.0Q1686 -273 1686 -262Q1686 -253 1701.0 -250.0Q1716 -247 1723 -247Q1750 -247 1768.0 -258.0Q1786 -269 1793 -269Q1799 -269 1803.5 -264.5Q1808 -260 1808 -255Q1808 -248 1802 -243Q1788 -230 1769.0 -206.0Q1750 -182 1731.0 -154.0Q1712 -126 1698 -99Q1694 -89 1686.5 -71.0Q1679 -53 1679 -37Q1679 -10 1698 -10Q1706 -10 1716.5 -16.0Q1727 -22 1737 -30Q1761 -52 1779.5 -73.5Q1798 -95 1817.0 -122.0Q1836 -149 1861 -187Q1865 -194 1875 -194Q1888 -194 1888 -182Q1888 -176 1882 -165Q1868 -140 1845.5 -110.0Q1823 -80 1799.5 -53.5Q1776 -27 1758 -13Q1726 14 1692 14Z M1930 10Q1878 10 1857.5 -20.5Q1837 -51 1837 -92Q1837 -122 1852.0 -163.5Q1867 -205 1893.5 -245.0Q1920 -285 1955.0 -311.5Q1990 -338 2030 -338Q2056 -338 2071.5 -323.5Q2087 -309 2087 -287Q2087 -245 2060.0 -206.0Q2033 -167 1990.0 -142.0Q1947 -117 1898 -117Q1892 -117 1886.0 -117.5Q1880 -118 1874 -119Q1871 -106 1871 -89Q1871 -63 1883.5 -41.0Q1896 -19 1932 -19Q1962 -19 1990.0 -34.0Q2018 -49 2037 -68Q2056 -87 2069.0 -102.0Q2082 -117 2096.0 -136.5Q2110 -156 2131 -188Q2135 -195 2143 -195Q2157 -195 2157 -180Q2157 -175 2155 -172Q2128 -126 2095.0 -84.5Q2062 -43 2021.5 -16.5Q1981 10 1930 10ZM1905 -148Q1943 -148 1976.5 -168.5Q2010 -189 2031.5 -220.0Q2053 -251 2053 -283Q2053 -294 2047.5 -301.0Q2042 -308 2029 -308Q2003 -308 1979.0 -290.5Q1955 -273 1935.5 -246.5Q1916 -220 1902.5 -194.0Q1889 -168 1883 -150Q1888 -149 1893.5 -148.5Q1899 -148 1905 -148Z M2229 373Q2200 373 2180.5 359.5Q2161 346 2156 318Q2152 289 2178.0 257.0Q2204 225 2243 194Q2274 169 2308.0 147.5Q2342 126 2371.5 108.5Q2401 91 2419 81Q2457 58 2497.0 33.5Q2537 9 2574 -14Q2586 -50 2589.5 -86.5Q2593 -123 2592 -158Q2581 -141 2560.5 -113.0Q2540 -85 2512.5 -57.0Q2485 -29 2453.0 -9.5Q2421 10 2387 10Q2344 10 2328.0 -15.0Q2312 -40 2312 -74Q2312 -104 2320.5 -135.0Q2329 -166 2339 -185Q2359 -226 2389.5 -265.0Q2420 -304 2458.5 -329.0Q2497 -354 2537 -354Q2566 -354 2579.5 -337.0Q2593 -320 2593 -298Q2593 -291 2589.0 -276.0Q2585 -261 2578.5 -245.0Q2572 -229 2563.0 -217.5Q2554 -206 2543 -206Q2536 -206 2531.0 -210.5Q2526 -215 2526 -220Q2526 -223 2534.0 -234.0Q2542 -245 2550.0 -261.0Q2558 -277 2558 -295Q2558 -306 2552.5 -315.0Q2547 -324 2532 -324Q2501 -324 2470.5 -302.0Q2440 -280 2415.0 -247.0Q2390 -214 2373 -179Q2366 -164 2357.0 -134.0Q2348 -104 2348 -76Q2348 -52 2358.0 -35.5Q2368 -19 2393 -19Q2415 -19 2440.5 -36.0Q2466 -53 2492.0 -79.5Q2518 -106 2539.5 -134.5Q2561 -163 2574.5 -186.0Q2588 -209 2589 -219Q2590 -224 2595.0 -230.0Q2600 -236 2607 -236Q2615 -236 2618.0 -231.0Q2621 -226 2622 -221Q2629 -194 2629 -158Q2629 -129 2625.5 -99.0Q2622 -69 2618 -45Q2652 -73 2680.5 -112.5Q2709 -152 2732 -187Q2737 -195 2744 -195Q2749 -195 2753.5 -191.0Q2758 -187 2758 -181Q2758 -177 2755 -171Q2724 -121 2689.5 -75.5Q2655 -30 2602 5Q2574 85 2525.5 156.5Q2477 228 2418.5 280.5Q2360 333 2301 357Q2282 365 2263.5 369.0Q2245 373 2229 373ZM2229 348Q2241 348 2255.0 344.0Q2269 340 2284 334Q2344 307 2393.5 263.5Q2443 220 2480.5 167.0Q2518 114 2541 61Q2543 55 2546.0 49.0Q2549 43 2552 37Q2523 53 2496.0 71.5Q2469 90 2440 106Q2424 115 2393.0 133.0Q2362 151 2326.0 173.5Q2290 196 2259 221Q2229 244 2209.0 267.0Q2189 290 2189 310Q2189 330 2200.5 339.0Q2212 348 2229 348Z M2800 10Q2748 10 2727.5 -20.5Q2707 -51 2707 -92Q2707 -122 2722.0 -163.5Q2737 -205 2763.5 -245.0Q2790 -285 2825.0 -311.5Q2860 -338 2900 -338Q2926 -338 2941.5 -323.5Q2957 -309 2957 -287Q2957 -245 2930.0 -206.0Q2903 -167 2860.0 -142.0Q2817 -117 2768 -117Q2762 -117 2756.0 -117.5Q2750 -118 2744 -119Q2741 -106 2741 -89Q2741 -63 2753.5 -41.0Q2766 -19 2802 -19Q2832 -19 2860.0 -34.0Q2888 -49 2907 -68Q2926 -87 2939.0 -102.0Q2952 -117 2966.0 -136.5Q2980 -156 3001 -188Q3005 -195 3013 -195Q3027 -195 3027 -180Q3027 -175 3025 -172Q2998 -126 2965.0 -84.5Q2932 -43 2891.5 -16.5Q2851 10 2800 10ZM2775 -148Q2813 -148 2846.5 -168.5Q2880 -189 2901.5 -220.0Q2923 -251 2923 -283Q2923 -294 2917.5 -301.0Q2912 -308 2899 -308Q2873 -308 2849.0 -290.5Q2825 -273 2805.5 -246.5Q2786 -220 2772.5 -194.0Q2759 -168 2753 -150Q2758 -149 2763.5 -148.5Q2769 -148 2775 -148Z M3033 36Q3013 36 3003.0 23.5Q2993 11 2990.0 -6.0Q2987 -23 2987 -36Q2987 -77 3002.0 -128.0Q3017 -179 3037.5 -230.0Q3058 -281 3075 -321Q3057 -320 3035.5 -315.0Q3014 -310 2997 -310Q2983 -310 2983 -322Q2983 -339 3001 -342Q3023 -347 3046.0 -350.0Q3069 -353 3091 -355Q3097 -366 3108.0 -389.0Q3119 -412 3133.0 -438.5Q3147 -465 3160.5 -486.5Q3174 -508 3183 -517Q3189 -523 3196 -523Q3203 -523 3208.0 -519.0Q3213 -515 3213 -509Q3213 -506 3210 -501Q3185 -470 3168.0 -433.0Q3151 -396 3134 -361Q3152 -363 3172.0 -365.0Q3192 -367 3211 -367Q3217 -367 3222.5 -365.0Q3228 -363 3228 -356Q3228 -350 3222.5 -346.0Q3217 -342 3210 -340Q3188 -336 3164.5 -333.5Q3141 -331 3118 -328Q3105 -298 3088.0 -261.0Q3071 -224 3055.5 -184.5Q3040 -145 3030.0 -108.0Q3020 -71 3020 -41Q3020 -36 3020.5 -24.5Q3021 -13 3025.0 -4.0Q3029 5 3037 5Q3054 5 3061.0 -4.0Q3068 -13 3077 -13Q3084 -13 3089.5 -9.0Q3095 -5 3095 1Q3095 10 3083.5 18.0Q3072 26 3057.0 31.0Q3042 36 3033 36Z M3233 36Q3213 36 3203.0 23.5Q3193 11 3190.0 -6.0Q3187 -23 3187 -36Q3187 -77 3202.0 -128.0Q3217 -179 3237.5 -230.0Q3258 -281 3275 -321Q3257 -320 3235.5 -315.0Q3214 -310 3197 -310Q3183 -310 3183 -322Q3183 -339 3201 -342Q3223 -347 3246.0 -350.0Q3269 -353 3291 -355Q3297 -366 3308.0 -389.0Q3319 -412 3333.0 -438.5Q3347 -465 3360.5 -486.5Q3374 -508 3383 -517Q3389 -523 3396 -523Q3403 -523 3408.0 -519.0Q3413 -515 3413 -509Q3413 -506 3410 -501Q3385 -470 3368.0 -433.0Q3351 -396 3334 -361Q3352 -363 3372.0 -365.0Q3392 -367 3411 -367Q3417 -367 3422.5 -365.0Q3428 -363 3428 -356Q3428 -350 3422.5 -346.0Q3417 -342 3410 -340Q3388 -336 3364.5 -333.5Q3341 -331 3318 -328Q3305 -298 3288.0 -261.0Q3271 -224 3255.5 -184.5Q3240 -145 3230.0 -108.0Q3220 -71 3220 -41Q3220 -36 3220.5 -24.5Q3221 -13 3225.0 -4.0Q3229 5 3237 5Q3254 5 3261.0 -4.0Q3268 -13 3277 -13Q3284 -13 3289.5 -9.0Q3295 -5 3295 1Q3295 10 3283.5 18.0Q3272 26 3257.0 31.0Q3242 36 3233 36Z M3553 -408Q3548 -408 3542.0 -410.0Q3536 -412 3536 -419Q3536 -424 3539 -428Q3547 -443 3568.5 -454.0Q3590 -465 3601 -465Q3606 -465 3612.0 -462.5Q3618 -460 3618 -453Q3618 -436 3597.5 -422.0Q3577 -408 3553 -408ZM3441 1Q3407 1 3387.0 -18.0Q3367 -37 3367 -71Q3367 -91 3371.0 -110.5Q3375 -130 3382 -149Q3386 -160 3398.5 -185.5Q3411 -211 3428.0 -239.5Q3445 -268 3461.0 -288.0Q3477 -308 3489 -308Q3494 -308 3502.5 -304.5Q3511 -301 3511 -294Q3511 -290 3507 -284Q3484 -258 3459.0 -222.0Q3434 -186 3417.0 -147.0Q3400 -108 3400 -72Q3400 -26 3444 -26Q3474 -26 3504.5 -55.0Q3535 -84 3572 -133Q3583 -147 3591.5 -160.5Q3600 -174 3607 -184Q3614 -191 3622 -191Q3634 -191 3634 -182Q3634 -171 3618.0 -147.0Q3602 -123 3582 -97Q3543 -49 3514.0 -24.0Q3485 1 3441 1Z M3662 3Q3657 3 3651.0 0.0Q3645 -3 3645 -8Q3645 -16 3648 -22Q3659 -46 3676.5 -81.0Q3694 -116 3711.5 -153.5Q3729 -191 3741.5 -224.0Q3754 -257 3754 -277Q3754 -283 3751.5 -288.5Q3749 -294 3741 -294Q3729 -294 3717.5 -284.0Q3706 -274 3697.0 -261.5Q3688 -249 3682 -241Q3662 -214 3648.0 -191.5Q3634 -169 3619.5 -147.5Q3605 -126 3584 -100Q3581 -96 3577.5 -93.5Q3574 -91 3568 -91Q3562 -91 3557.5 -97.0Q3553 -103 3556 -108Q3578 -143 3599.0 -174.5Q3620 -206 3636.0 -229.0Q3652 -252 3658 -260Q3675 -282 3693.5 -302.0Q3712 -322 3744 -322Q3771 -322 3781.5 -307.0Q3792 -292 3792 -272Q3792 -236 3762 -179Q3799 -218 3841.5 -250.0Q3884 -282 3921.0 -303.5Q3958 -325 3977 -330Q3986 -333 3995.5 -335.0Q4005 -337 4013 -337Q4023 -337 4029.5 -332.0Q4036 -327 4036 -313Q4036 -299 4018.0 -273.5Q4000 -248 3974.5 -215.5Q3949 -183 3926.0 -150.0Q3903 -117 3893 -88Q3890 -81 3889.0 -74.5Q3888 -68 3888 -63Q3888 -36 3913 -36Q3929 -36 3953 -52Q3967 -61 3980.5 -72.5Q3994 -84 4001 -93Q4016 -110 4025.5 -122.0Q4035 -134 4044.5 -148.5Q4054 -163 4069 -185Q4072 -190 4075.0 -192.0Q4078 -194 4085 -194Q4096 -194 4096 -180Q4096 -174 4087.0 -159.5Q4078 -145 4065.5 -127.5Q4053 -110 4041.5 -95.5Q4030 -81 4025 -75Q4014 -62 3997.5 -48.0Q3981 -34 3964 -24Q3948 -15 3931.0 -11.0Q3914 -7 3898 -7Q3872 -7 3860.5 -22.0Q3849 -37 3849 -54Q3849 -80 3866.5 -113.5Q3884 -147 3908.5 -180.5Q3933 -214 3954.5 -241.0Q3976 -268 3984 -280Q3986 -283 3987.0 -285.5Q3988 -288 3988 -290Q3988 -298 3976 -298Q3970 -298 3962 -295Q3921 -278 3876.5 -245.0Q3832 -212 3794.5 -173.5Q3757 -135 3735 -101L3695 -38Q3690 -30 3686.0 -21.5Q3682 -13 3677 -5Q3671 3 3662 3Z M3953 373Q3924 373 3904.5 359.5Q3885 346 3880 318Q3876 289 3902.0 257.0Q3928 225 3967 194Q3998 169 4032.0 147.5Q4066 126 4095.5 108.5Q4125 91 4143 81Q4181 58 4221.0 33.5Q4261 9 4298 -14Q4310 -50 4313.5 -86.5Q4317 -123 4316 -158Q4305 -141 4284.5 -113.0Q4264 -85 4236.5 -57.0Q4209 -29 4177.0 -9.5Q4145 10 4111 10Q4068 10 4052.0 -15.0Q4036 -40 4036 -74Q4036 -104 4044.5 -135.0Q4053 -166 4063 -185Q4083 -226 4113.5 -265.0Q4144 -304 4182.5 -329.0Q4221 -354 4261 -354Q4290 -354 4303.5 -337.0Q4317 -320 4317 -298Q4317 -291 4313.0 -276.0Q4309 -261 4302.5 -245.0Q4296 -229 4287.0 -217.5Q4278 -206 4267 -206Q4260 -206 4255.0 -210.5Q4250 -215 4250 -220Q4250 -223 4258.0 -234.0Q4266 -245 4274.0 -261.0Q4282 -277 4282 -295Q4282 -306 4276.5 -315.0Q4271 -324 4256 -324Q4225 -324 4194.5 -302.0Q4164 -280 4139.0 -247.0Q4114 -214 4097 -179Q4090 -164 4081.0 -134.0Q4072 -104 4072 -76Q4072 -52 4082.0 -35.5Q4092 -19 4117 -19Q4139 -19 4164.5 -36.0Q4190 -53 4216.0 -79.5Q4242 -106 4263.5 -134.5Q4285 -163 4298.5 -186.0Q4312 -209 4313 -219Q4314 -224 4319.0 -230.0Q4324 -236 4331 -236Q4339 -236 4342.0 -231.0Q4345 -226 4346 -221Q4353 -194 4353 -158Q4353 -129 4349.5 -99.0Q4346 -69 4342 -45Q4376 -73 4404.5 -112.5Q4433 -152 4456 -187Q4461 -195 4468 -195Q4473 -195 4477.5 -191.0Q4482 -187 4482 -181Q4482 -177 4479 -171Q4448 -121 4413.5 -75.5Q4379 -30 4326 5Q4298 85 4249.5 156.5Q4201 228 4142.5 280.5Q4084 333 4025 357Q4006 365 3987.5 369.0Q3969 373 3953 373ZM3953 348Q3965 348 3979.0 344.0Q3993 340 4008 334Q4068 307 4117.5 263.5Q4167 220 4204.5 167.0Q4242 114 4265 61Q4267 55 4270.0 49.0Q4273 43 4276 37Q4247 53 4220.0 71.5Q4193 90 4164 106Q4148 115 4117.0 133.0Q4086 151 4050.0 173.5Q4014 196 3983 221Q3953 244 3933.0 267.0Q3913 290 3913 310Q3913 330 3924.5 339.0Q3936 348 3953 348Z"/><path class="hs" transform="translate(826 1701)" d="M893 100Q888 100 885 99Q855 87 845.5 68.0Q836 49 836 21Q836 4 838.0 -13.0Q840 -30 843 -47Q865 -178 921.0 -303.0Q977 -428 1055 -540Q1060 -547 1060 -555Q1060 -562 1054.5 -565.0Q1049 -568 1041 -568Q1024 -568 1007.5 -558.0Q991 -548 980 -538Q930 -495 881.5 -437.5Q833 -380 793 -330Q759 -285 726.0 -239.0Q693 -193 662 -146Q649 -125 635.5 -101.5Q622 -78 608 -58Q603 -48 592 -48Q585 -48 580.0 -52.5Q575 -57 575 -63Q575 -65 575.5 -66.0Q576 -67 576 -68Q610 -166 642.5 -264.0Q675 -362 706 -460Q709 -469 711.0 -478.0Q713 -487 713 -496Q713 -507 708.5 -516.0Q704 -525 690 -525Q678 -525 666.5 -519.0Q655 -513 646 -507Q630 -496 615.0 -482.5Q600 -469 586 -456Q531 -403 481.5 -344.5Q432 -286 394 -222Q358 -159 321.5 -96.0Q285 -33 252 32Q245 35 237 35Q232 35 225.0 33.0Q218 31 218 24V20Q242 -42 274.5 -102.5Q307 -163 338 -222Q351 -247 372.5 -285.5Q394 -324 418.5 -370.0Q443 -416 464.5 -462.0Q486 -508 499.5 -547.5Q513 -587 513 -613Q513 -643 494.0 -656.0Q475 -669 442 -669Q411 -669 373.5 -660.0Q336 -651 300.5 -637.5Q265 -624 238 -610Q201 -592 160.0 -561.5Q119 -531 83.0 -493.5Q47 -456 24.5 -415.0Q2 -374 2 -334Q2 -304 20.0 -285.0Q38 -266 75 -266Q99 -266 114.5 -274.0Q130 -282 137 -282Q144 -282 149.0 -277.0Q154 -272 154 -266Q154 -257 138.0 -250.5Q122 -244 103.0 -241.0Q84 -238 76 -238Q24 -238 -2.0 -265.5Q-28 -293 -28 -336Q-28 -365 -18.0 -395.0Q-8 -425 9 -450Q33 -485 69.5 -520.0Q106 -555 148.5 -585.0Q191 -615 230 -635Q274 -658 333.5 -675.0Q393 -692 445 -692Q487 -692 516.5 -675.5Q546 -659 546 -618Q546 -592 534.5 -555.5Q523 -519 505.5 -479.5Q488 -440 470.5 -404.5Q453 -369 440 -345L445 -343Q457 -358 478.5 -384.0Q500 -410 527.5 -440.0Q555 -470 585.0 -496.5Q615 -523 643.5 -540.0Q672 -557 695 -557Q724 -557 734.5 -536.0Q745 -515 745 -494Q745 -484 743.0 -474.0Q741 -464 739 -453Q735 -433 727.5 -413.0Q720 -393 714 -373L660 -210L665 -208Q702 -263 750.5 -327.0Q799 -391 853.0 -452.0Q907 -513 957 -557Q975 -574 999.5 -587.5Q1024 -601 1052 -601Q1072 -601 1085.0 -591.5Q1098 -582 1098 -564Q1098 -554 1093.5 -544.0Q1089 -534 1083 -525Q1036 -456 994.5 -374.5Q953 -293 922.5 -208.0Q892 -123 876 -42Q873 -28 871.0 -13.0Q869 2 869 16Q869 39 874.5 50.0Q880 61 887.5 66.0Q895 71 900.5 74.5Q906 78 906 87Q906 100 893 100Z M1022 4Q989 4 976.5 -13.5Q964 -31 964 -56Q964 -80 972.0 -106.0Q980 -132 989.5 -154.5Q999 -177 1005 -188Q1023 -219 1045.5 -248.0Q1068 -277 1094 -299Q1120 -322 1147.5 -334.5Q1175 -347 1203 -347Q1251 -347 1271.0 -321.5Q1291 -296 1291 -267Q1291 -257 1288 -246Q1284 -231 1278.5 -220.0Q1273 -209 1265 -209Q1258 -209 1252.0 -216.0Q1246 -223 1248 -230Q1250 -237 1253.5 -244.0Q1257 -251 1258 -258Q1259 -263 1259.5 -267.0Q1260 -271 1260 -275Q1260 -302 1242.5 -312.5Q1225 -323 1205 -323Q1182 -323 1157.5 -310.0Q1133 -297 1115 -280Q1093 -258 1071.0 -229.0Q1049 -200 1033 -170Q1031 -165 1022.5 -146.0Q1014 -127 1006.5 -103.5Q999 -80 999 -60Q999 -46 1005.5 -36.0Q1012 -26 1028 -26Q1045 -26 1067.5 -42.0Q1090 -58 1113.5 -81.5Q1137 -105 1156.0 -127.0Q1175 -149 1184 -161Q1190 -169 1195.5 -178.5Q1201 -188 1207 -196Q1210 -200 1219 -200Q1227 -200 1235.5 -195.5Q1244 -191 1242 -183Q1238 -176 1227.5 -152.5Q1217 -129 1208.0 -101.5Q1199 -74 1199 -53Q1199 -27 1215 -23Q1226 -21 1238.5 -31.0Q1251 -41 1261.5 -54.0Q1272 -67 1277 -73Q1298 -101 1316.5 -130.5Q1335 -160 1354 -186Q1360 -194 1368 -194Q1382 -194 1382 -179Q1382 -174 1369.0 -153.5Q1356 -133 1337.5 -107.0Q1319 -81 1303 -60Q1287 -39 1267.0 -19.0Q1247 1 1216 1Q1187 1 1176.5 -12.0Q1166 -25 1166 -41Q1166 -55 1169.0 -70.5Q1172 -86 1175 -97L1171 -100Q1162 -89 1144.0 -72.0Q1126 -55 1104.0 -37.5Q1082 -20 1060.5 -8.0Q1039 4 1022 4Z M1467 14Q1448 14 1434.5 2.0Q1421 -10 1421 -36Q1421 -57 1429.0 -79.5Q1437 -102 1444 -115Q1460 -147 1478.0 -174.5Q1496 -202 1505 -214Q1487 -213 1462.5 -223.0Q1438 -233 1428 -249Q1415 -230 1391.0 -187.5Q1367 -145 1330 -98Q1324 -90 1316 -90Q1301 -90 1301 -103Q1301 -108 1304 -112Q1319 -133 1341.5 -166.5Q1364 -200 1385.5 -236.5Q1407 -273 1420 -302Q1424 -311 1428.5 -321.0Q1433 -331 1437 -340Q1441 -347 1448.0 -352.5Q1455 -358 1464 -358Q1472 -358 1480.0 -351.5Q1488 -345 1488 -337Q1488 -328 1481.5 -314.5Q1475 -301 1468.0 -287.0Q1461 -273 1461 -262Q1461 -253 1476.0 -250.0Q1491 -247 1498 -247Q1525 -247 1543.0 -258.0Q1561 -269 1568 -269Q1574 -269 1578.5 -264.5Q1583 -260 1583 -255Q1583 -248 1577 -243Q1563 -230 1544.0 -206.0Q1525 -182 1506.0 -154.0Q1487 -126 1473 -99Q1469 -89 1461.5 -71.0Q1454 -53 1454 -37Q1454 -10 1473 -10Q1481 -10 1491.5 -16.0Q1502 -22 1512 -30Q1536 -52 1554.5 -73.5Q1573 -95 1592.0 -122.0Q1611 -149 1636 -187Q1640 -194 1650 -194Q1663 -194 1663 -182Q1663 -176 1657 -165Q1643 -140 1620.5 -110.0Q1598 -80 1574.5 -53.5Q1551 -27 1533 -13Q1501 14 1467 14Z M1748 14Q1729 14 1715.5 2.0Q1702 -10 1702 -36Q1702 -57 1710.0 -79.5Q1718 -102 1725 -115Q1741 -147 1759.0 -174.5Q1777 -202 1786 -214Q1768 -213 1743.5 -223.0Q1719 -233 1709 -249Q1696 -230 1672.0 -187.5Q1648 -145 1611 -98Q1605 -90 1597 -90Q1582 -90 1582 -103Q1582 -108 1585 -112Q1600 -133 1622.5 -166.5Q1645 -200 1666.5 -236.5Q1688 -273 1701 -302Q1705 -311 1709.5 -321.0Q1714 -331 1718 -340Q1722 -347 1729.0 -352.5Q1736 -358 1745 -358Q1753 -358 1761.0 -351.5Q1769 -345 1769 -337Q1769 -328 1762.5 -314.5Q1756 -301 1749.0 -287.0Q1742 -273 1742 -262Q1742 -253 1757.0 -250.0Q1772 -247 1779 -247Q1806 -247 1824.0 -258.0Q1842 -269 1849 -269Q1855 -269 1859.5 -264.5Q1864 -260 1864 -255Q1864 -248 1858 -243Q1844 -230 1825.0 -206.0Q1806 -182 1787.0 -154.0Q1768 -126 1754 -99Q1750 -89 1742.5 -71.0Q1735 -53 1735 -37Q1735 -10 1754 -10Q1762 -10 1772.5 -16.0Q1783 -22 1793 -30Q1817 -52 1835.5 -73.5Q1854 -95 1873.0 -122.0Q1892 -149 1917 -187Q1921 -194 1931 -194Q1944 -194 1944 -182Q1944 -176 1938 -165Q1924 -140 1901.5 -110.0Q1879 -80 1855.5 -53.5Q1832 -27 1814 -13Q1782 14 1748 14Z M2070 -408Q2065 -408 2059.0 -410.0Q2053 -412 2053 -419Q2053 -424 2056 -428Q2064 -443 2085.5 -454.0Q2107 -465 2118 -465Q2123 -465 2129.0 -462.5Q2135 -460 2135 -453Q2135 -436 2114.5 -422.0Q2094 -408 2070 -408ZM1958 1Q1924 1 1904.0 -18.0Q1884 -37 1884 -71Q1884 -91 1888.0 -110.5Q1892 -130 1899 -149Q1903 -160 1915.5 -185.5Q1928 -211 1945.0 -239.5Q1962 -268 1978.0 -288.0Q1994 -308 2006 -308Q2011 -308 2019.5 -304.5Q2028 -301 2028 -294Q2028 -290 2024 -284Q2001 -258 1976.0 -222.0Q1951 -186 1934.0 -147.0Q1917 -108 1917 -72Q1917 -26 1961 -26Q1991 -26 2021.5 -55.0Q2052 -84 2089 -133Q2100 -147 2108.5 -160.5Q2117 -174 2124 -184Q2131 -191 2139 -191Q2151 -191 2151 -182Q2151 -171 2135.0 -147.0Q2119 -123 2099 -97Q2060 -49 2031.0 -24.0Q2002 1 1958 1Z M2194 10Q2142 10 2121.5 -20.5Q2101 -51 2101 -92Q2101 -122 2116.0 -163.5Q2131 -205 2157.5 -245.0Q2184 -285 2219.0 -311.5Q2254 -338 2294 -338Q2320 -338 2335.5 -323.5Q2351 -309 2351 -287Q2351 -245 2324.0 -206.0Q2297 -167 2254.0 -142.0Q2211 -117 2162 -117Q2156 -117 2150.0 -117.5Q2144 -118 2138 -119Q2135 -106 2135 -89Q2135 -63 2147.5 -41.0Q2160 -19 2196 -19Q2226 -19 2254.0 -34.0Q2282 -49 2301 -68Q2320 -87 2333.0 -102.0Q2346 -117 2360.0 -136.5Q2374 -156 2395 -188Q2399 -195 2407 -195Q2421 -195 2421 -180Q2421 -175 2419 -172Q2392 -126 2359.0 -84.5Q2326 -43 2285.5 -16.5Q2245 10 2194 10ZM2169 -148Q2207 -148 2240.5 -168.5Q2274 -189 2295.5 -220.0Q2317 -251 2317 -283Q2317 -294 2311.5 -301.0Q2306 -308 2293 -308Q2267 -308 2243.0 -290.5Q2219 -273 2199.5 -246.5Q2180 -220 2166.5 -194.0Q2153 -168 2147 -150Q2152 -149 2157.5 -148.5Q2163 -148 2169 -148Z M2411 15Q2378 15 2365.0 -7.0Q2352 -29 2352 -54Q2352 -83 2364.5 -120.0Q2377 -157 2399.0 -195.0Q2421 -233 2450.0 -265.0Q2479 -297 2513.5 -317.0Q2548 -337 2584 -337Q2606 -337 2619.5 -329.0Q2633 -321 2645 -307Q2666 -341 2692.0 -389.5Q2718 -438 2745.0 -487.5Q2772 -537 2794 -573Q2804 -590 2815.0 -596.0Q2826 -602 2836 -602Q2844 -602 2849.0 -598.0Q2854 -594 2854 -581Q2854 -574 2841.5 -551.5Q2829 -529 2809.0 -498.0Q2789 -467 2766.0 -433.0Q2743 -399 2722.5 -368.0Q2702 -337 2689 -316Q2679 -300 2662.0 -267.5Q2645 -235 2627.0 -196.0Q2609 -157 2597.0 -120.0Q2585 -83 2585 -59Q2585 -46 2590.0 -37.0Q2595 -28 2605 -28Q2616 -28 2628.0 -37.0Q2640 -46 2650.0 -57.0Q2660 -68 2664 -74Q2668 -79 2683.0 -100.0Q2698 -121 2715.5 -145.5Q2733 -170 2742 -184Q2747 -192 2756 -192Q2769 -192 2769 -177Q2769 -175 2765.0 -168.5Q2761 -162 2755 -152Q2707 -78 2673.0 -39.0Q2639 0 2601 0Q2598 0 2594.5 0.0Q2591 0 2588 -1Q2568 -5 2560.5 -23.0Q2553 -41 2553 -60Q2553 -69 2554.5 -79.5Q2556 -90 2560 -108Q2541 -85 2518.0 -58.5Q2495 -32 2472.5 -12.0Q2450 8 2433 12Q2423 15 2411 15ZM2415 -16Q2430 -16 2450.5 -31.5Q2471 -47 2492.5 -71.0Q2514 -95 2533.5 -122.0Q2553 -149 2567.5 -171.5Q2582 -194 2588 -206L2626 -281Q2618 -292 2608.5 -300.0Q2599 -308 2583 -308Q2552 -308 2523.0 -289.5Q2494 -271 2469.5 -241.5Q2445 -212 2427.0 -177.5Q2409 -143 2399.0 -110.5Q2389 -78 2389 -54Q2389 -43 2393.5 -29.5Q2398 -16 2415 -16Z M3003 -580Q3009 -580 3014.0 -576.5Q3019 -573 3018 -566Q3018 -563 3004.5 -532.0Q2991 -501 2971.5 -455.0Q2952 -409 2932 -358Q2915 -315 2900.5 -275.0Q2886 -235 2877.0 -208.5Q2868 -182 2865 -176Q2860 -166 2848 -166Q2844 -166 2839.0 -169.5Q2834 -173 2835 -180Q2836 -184 2846.0 -213.5Q2856 -243 2873.0 -288.5Q2890 -334 2909 -383Q2927 -428 2944.0 -468.5Q2961 -509 2973.5 -537.0Q2986 -565 2988 -570Q2993 -580 3003 -580ZM2809 -70Q2823 -70 2833.5 -59.0Q2844 -48 2843 -34Q2842 -20 2831.5 -10.0Q2821 0 2807 0Q2793 0 2782.5 -10.0Q2772 -20 2773 -34Q2774 -48 2784.5 -59.0Q2795 -70 2809 -70Z"/></g></svg></div>
+  <div class="scroll"><span></span>스크롤</div>
+</section>
+
+<!-- ===== 2. 글귀 ===== -->
+<section class="poem" aos>
+  <div class="utext">
+<p>You can not be happy every day.</p>
+<p>But there are happy things every day.</p>
+<p></p>
+<p>매일 행복할 순 없지만,</p>
+<p>행복한 것들은 매일 있어.</p>
+<p></p>
+<p>&lt;월트 디즈니&gt;, 곰돌이 푸 中</p>
+  </div>
+</section>
+
+<!-- ===== 3. 인사말 ===== -->
+<section class="greeting">
+  <div aos>
+    <h4>저희 결혼합니다</h4>
+    <div class="utext">
+<p>2021년 여름에 시작한 마음이</p>
+<p>여섯 번의 여름을 지나</p>
+<p>이제 한 가정이 되려 합니다.</p>
+<p></p>
+<p>부담 없이 편한 마음으로 오셔서</p>
+<p>축하해 주시면 감사하겠습니다.</p>
+<p></p>
+<p>혹여 참석이 어려우시더라도</p>
+<p>마음으로 축하해 주시면 감사하겠습니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. 신랑·신부 ===== -->
+<section class="couple" aos>
+  <div class="img_con">
+    <div class="img_box"><img src="사진/02_신랑신부_정방형_1000x1000/portrait-groom.jpg" data-alt="사진/02_신랑신부_정방형_1000x1000/portrait-groom" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+    <div class="img_box"><img src="사진/02_신랑신부_정방형_1000x1000/portrait-bride.jpg" data-alt="사진/02_신랑신부_정방형_1000x1000/portrait-bride" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+  </div>
+  <div class="name_con">
+    <div class="name_list groom"><div class="name_box">신랑<span class="name">강준모</span></div><a class="icon todo" href="tel:010-0000-0000" aria-label="신랑에게 전화"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a></div>
+    <div class="name_list bride"><div class="name_box">신부<span class="name">홍세림</span></div><a class="icon todo" href="tel:010-0000-0000" aria-label="신부에게 전화"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a></div>
+  </div>
+  <div class="intro_con">
+    <div class="intro_list"><p>98년 6월 18일</p><p class="todo">사는 곳</p><p>식품 상품기획 MD 🍰</p><p></p><p>저희 행복하게</p></div>
+    <div class="intro_list"><p>98년 8월 5일</p><p class="todo">사는 곳</p><p class="todo">직업 한 줄</p><p></p><p>잘 살겠습니다 :)</p></div>
+  </div>
+  <div class="relation_con">
+    <div class="relation_list">강인구 · 서희경<span class="rel">의 아들</span></div>
+    <div class="relation_list">홍광종 · 박영례<span class="rel">의 장녀</span></div>
+  </div>
+</section>
+
+<!-- ===== 5. 갤러리 ===== -->
+<section class="gallery">
+  <div class="inner">
+    <div class="title" aos><h2>갤러리</h2></div>
+    <div class="slider" aos>
+      <div class="track" id="track">
+        <div><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-01.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-01" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-02.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-02" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-03.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-03" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-04.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-04" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-05.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-05" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-06.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-06" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+      </div>
+      <button class="nav prev" onclick="slide(-1)" aria-label="이전">‹</button>
+      <button class="nav next" onclick="slide(1)" aria-label="다음">›</button>
+    </div>
+    <div class="fraction" id="fraction">1 / 6</div>
+  </div>
+</section>
+
+<!-- ===== 6. 안내 탭 ===== -->
+<section class="notice" aos>
+  <div class="tabs">
+    <button class="active" onclick="tab(0)">주차 안내</button>
+    <button onclick="tab(1)">도보 안내</button>
+    <button onclick="tab(2)">예식 안내</button>
+  </div>
+  <div class="panel active">
+    <div class="img_box"><img src="사진/06_안내탭(선택)_가로4x3_1200x900/tab-01.jpg" data-alt="사진/06_안내탭(선택)_가로4x3_1200x900/tab-01" onerror="altExt(this,true)" onload="this.classList.add('ok')" alt=""></div>
+    <div class="desc">
+<p>U PLANET(AK플라자) 지하 B3~B8층에</p>
+<p>3,200대 주차가 가능합니다.</p>
+<p>IVEX 표지판을 따라 주차하신 뒤</p>
+<p>에스컬레이터 또는 엘리베이터로</p>
+<p>5층까지 올라오시면 됩니다.</p>
+<p></p>
+<p><mark>주차는 2시간 무료</mark>입니다.</p>
+<p>웨딩홀 로비 웰컴드링크존 좌측 노트북에서</p>
+<p>사전 정산 부탁드립니다.</p>
+<p></p>
+<p>건물 내 매장(지하 2층 다이소, 1층 카페 등)</p>
+<p>이용 시 2시간 추가 정산이 가능합니다.</p>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="img_box"><img src="사진/06_안내탭(선택)_가로4x3_1200x900/tab-02.jpg" data-alt="사진/06_안내탭(선택)_가로4x3_1200x900/tab-02" onerror="altExt(this,true)" onload="this.classList.add('ok')" alt=""></div>
+    <div class="desc">
+<p>광명역에서 오실 경우</p>
+<p><mark>1번 출구 앞 보행자도로</mark>를 이용해 주세요.</p>
+<p>횡단보도를 건너 AK플라자 방향으로</p>
+<p>도보 5분입니다.</p>
+<p></p>
+<p>TOP10(탑텐) 매장이 있는 골목으로 들어가면</p>
+<p>로또판매점 우측에</p>
+<p><mark>5층으로 오르는 에스컬레이터</mark>가 있습니다.</p>
+<p></p>
+<p>건물 입구로 들어가면 내부 엘리베이터도</p>
+<p>이용할 수 있으나 대기가 길 수 있습니다.</p>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="img_box"><img src="사진/06_안내탭(선택)_가로4x3_1200x900/tab-03.jpg" data-alt="사진/06_안내탭(선택)_가로4x3_1200x900/tab-03" onerror="altExt(this,true)" onload="this.classList.add('ok')" alt=""></div>
+    <div class="desc">
+<p>예식은 오후 4시 20분에 시작합니다.</p>
+<p>식사는 예식 후 같은 층 연회장에</p>
+<p>준비되어 있습니다.</p>
+<p></p>
+<p>화환은 정중히 사양합니다.</p>
+<p>축하해 주시는 마음만 감사히 받겠습니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. 예식 안내 ===== -->
+<section class="ceremony">
+  <div class="inner">
+    <div aos>
+      <div class="c_title">예식 안내</div>
+      <div class="c_sub">2027년 1월 16일 토요일 오후 4시 20분</div>
+      <div class="c_loc">아이벡스 컨벤션 5층</div>
+    </div>
+    <div class="img_box" aos><img src="사진/04_예식안내_정방형_1200x1200/calendar.jpg" data-alt="사진/04_예식안내_정방형_1200x1200/calendar" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+    <table aos id="calTable"><caption><span>1월</span></caption></table>
+    <div class="d_day" aos>
+      <div class="sub">준모<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.7-9.6-9.2C.7 8 3 4.5 6.5 4.5c2 0 3.4 1.1 4.2 2.3l1.3 1.9 1.3-1.9c.8-1.2 2.2-2.3 4.2-2.3 3.5 0 5.8 3.5 4.1 7.3C19.5 16.3 12 21 12 21z"/></svg>세림 결혼식까지</div>
+      <div class="calc">
+        <span id="uD" data-l="Days">0</span><span id="uH" data-l="Hours">0</span><span id="uM" data-l="Minutes">0</span><span id="uS" data-l="Seconds">0</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. 오시는 길 ===== -->
+<section class="location">
+  <div class="inner">
+    <div class="title" aos><h2>오시는 길</h2></div>
+    <div class="top_box" aos>
+      <span class="loc_name">아이벡스 컨벤션</span>
+      <span class="loc_hall">AK플라자 광명 5층</span>
+      <span class="loc_addr">경기 광명시 양지로 17</span>
+      <span class="loc_addr"><a href="tel:02-897-1002">02-897-1002</a></span>
+    </div>
+    <div aos>
+      <div class="map_box"><iframe loading="lazy" src="https://www.google.com/maps?q=%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98+%EA%B4%91%EB%AA%85&z=16&hl=ko&output=embed" title="지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="navi">
+        <a href="tmap://search?name=%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98"><i style="background:#e0225b"></i>티맵</a>
+        <a href="https://map.kakao.com/link/search/%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98" target="_blank" rel="noopener"><i style="background:#fee500"></i>카카오내비</a>
+        <a href="https://map.naver.com/p/search/%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98" target="_blank" rel="noopener"><i style="background:#03c75a"></i>네이버지도</a>
+      </div>
+    </div>
+    <div class="trans">
+      <div class="trans_box" aos>
+        <div class="trans_title">🚆 KTX · 지하철</div>
+        <div class="trans_text"><p>KTX 광명역 하차 후 도보 5분</p><p>서울역 · 용산역에서 약 15분</p><p class="gap"></p><p>1호선 광명역 1번 출구 앞 보행자도로 이용</p><p>횡단보도를 건너 AK플라자 방향으로 도보 5분</p></div>
+      </div>
+      <div class="trans_box" aos>
+        <div class="trans_title">🚌 버스</div>
+        <div class="trans_text"><p>광명역데시앙 · 일직동행정복지센터 정류장 하차</p><p>(정류장 번호 14459) AK플라자 바로 앞</p><p class="todo">경유 노선 번호는 확인 후 추가</p></div>
+      </div>
+      <div class="trans_box" aos>
+        <div class="trans_title">🚗 자차</div>
+        <div class="trans_text"><p>내비게이션 "아이벡스 컨벤션" 또는 "AK플라자 광명" 검색</p><p>U PLANET(AK플라자) 지하 B3~B8층 주차</p><p>2시간 무료, 로비 노트북에서 사전 정산</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. 참석 여부 ===== -->
+<section class="rsvp" aos>
+  <div class="inner">
+    <div class="title"><h2>참석 여부 전달</h2></div>
+    <div class="textarea"><p>소중한 시간을 내어 결혼식에
+참석해주시는 모든 분들께 감사드립니다.
+정성껏 준비하기 위해 여쭙는 것이니
+참석 여부를 회신해 주시면
+더욱 감사하겠습니다.</p></div>
+    <div class="btn_box"><a class="l_btn" href="#" onclick="openRsvp();return false">참석 여부 전달</a></div>
+  </div>
+</section>
+
+<!-- ===== 10. 마음 전하실 곳 ===== -->
+<section class="bank" aos>
+  <div class="inner">
+    <div class="title"><h2>마음 전하실 곳</h2></div>
+    <div class="textarea"><p>멀리서도 축하의 마음을
+전하고 싶으신 분들을 위해
+계좌번호를 안내드립니다.
+
+소중한 축하를 보내주셔서 감사드리며,
+따뜻한 마음에 깊이 감사드립니다.</p></div>
+    <div class="account">
+      <div class="account_wrap groom">
+        <div class="account_box" onclick="this.parentElement.classList.toggle('open')">신랑측<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+        <ul class="account_list">
+          <li><div><h4>신랑</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">강준모</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+          <li><div><h4>신랑 아버지</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">강인구</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+          <li><div><h4>신랑 어머니</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">서희경</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+        </ul>
+      </div>
+      <div class="account_wrap bride">
+        <div class="account_box bride_account" onclick="this.parentElement.classList.toggle('open')">신부측<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+        <ul class="account_list">
+          <li><div><h4>신부</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">홍세림</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+          <li><div><h4>신부 아버지</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">홍광종</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+          <li><div><h4>신부 어머니</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">박영례</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 11. 함께한 시간 ===== -->
+<section class="together" aos>
+  <span>함께한 시간</span>
+  <span class="our_date" id="ourDate">"0년 0개월 0일"</span>
+</section>
+
+<!-- ===== 12. 엔딩 ===== -->
+<section class="ending" aos>
+  <div class="img_box">
+    <div class="dimmed"></div>
+    <img src="사진/05_엔딩_세로4x5_1200x1500/ending.jpg" data-alt="사진/05_엔딩_세로4x5_1200x1500/ending" onerror="altExt(this)" onload="this.classList.add('ok')" alt="">
+    <div class="text_box"><p><b>행복하게 잘 살겠습니다 :)</b></p></div>
+  </div>
+</section>
+
+<div class="footer"><div class="logo">Junmo &amp; Serim</div>2027. 01. 16 · IVEX CONVENTION</div>
+
+</div><!-- /.layout -->
+
+<!-- 참석 여부 팝업 (첫 진입 시) -->
+<div class="rsvp_popup" id="rsvpPopup">
+  <div class="popup_wrap">
+    <div class="title"><h2>참석 여부 전달</h2></div>
+    <div class="desc"><p>소중한 시간을 내어 결혼식에
+참석해주시는 모든 분들께 감사드립니다.
+정성껏 준비하기 위해 여쭙는 것이니
+참석 여부를 회신해 주시면
+더욱 감사하겠습니다.</p></div>
+    <div class="wedding_info"><table>
+      <tr><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7.5-4.7-9.6-9.2C.7 8 3 4.5 6.5 4.5c2 0 3.4 1.1 4.2 2.3l1.3 1.9 1.3-1.9c.8-1.2 2.2-2.3 4.2-2.3 3.5 0 5.8 3.5 4.1 7.3C19.5 16.3 12 21 12 21z"/></svg></td><td><span class="g">신랑</span> 강준모, <span class="b">신부</span> 홍세림</td></tr>
+      <tr><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></td><td>2027년 1월 16일 토요일 오후 4시 20분</td></tr>
+      <tr><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></td><td>아이벡스 컨벤션 5층</td></tr>
+    </table></div>
+    <div class="btn_box"><button onclick="closeRsvpPopup();openRsvp()">참석 여부 전달</button></div>
+    <div class="show_btn"><label><input type="checkbox" id="hideToday"><i>✓</i><span>오늘하루 보지않기</span></label></div>
+    <button class="close_btn" onclick="closeRsvpPopup()" aria-label="닫기">×</button>
+  </div>
+</div>
+
+<!-- 참석 여부 입력창 -->
+<div class="modal_rsvp" id="rsvpModal">
+  <div class="modal_title"><h2>참석 여부 전달</h2><button class="close_btn" onclick="closeRsvp()" aria-label="닫기">×</button></div>
+  <form id="rsvpForm" onsubmit="submitRsvp();return false">
+    <div class="form">
+      <div class="chk_title">어느 측 하객이신가요? <span class="essential">*</span></div>
+      <div class="chk"><input type="radio" name="kind" value="신랑" id="k1"><label for="k1">신랑</label><input type="radio" name="kind" value="신부" id="k2"><label for="k2">신부</label></div>
+      <div class="chk_title">참석여부 <span class="essential">*</span></div>
+      <div class="chk"><input type="radio" name="attend" value="참석" id="a1"><label for="a1">참석</label><input type="radio" name="attend" value="불참석" id="a2"><label for="a2">불참석</label></div>
+      <div class="chk_title">식사여부 <span class="essential">*</span></div>
+      <div class="chk"><input type="radio" name="meal" value="식사함" id="m1"><label for="m1">○</label><input type="radio" name="meal" value="식사 안 함" id="m2"><label for="m2">✕</label><input type="radio" name="meal" value="미정" id="m3"><label for="m3">미정</label></div>
+      <div class="chk_title">성함 <span class="essential">*</span></div>
+      <input type="text" id="rName" maxlength="20" autocomplete="name">
+      <div class="chk_title">동행인 성함</div>
+      <input type="text" id="rPeople" maxlength="60" placeholder="동행인이 있으면 성함을 적어주세요">
+      <div class="chk_title">전달사항</div>
+      <textarea id="rMemo" maxlength="300"></textarea>
+      <label class="agree"><input type="checkbox" id="rAgree"><i>✓</i>개인정보 수집 및 활용 동의<small>(참석 확인 목적으로만 사용하며 예식 후 삭제합니다)</small></label>
+      <div class="btn_box"><button type="submit">전달</button></div>
+    </div>
+  </form>
+</div>
+
+<div class="quick">
+  <button class="up" id="upBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 15l6-6 6 6"/></svg></button>
+  <button class="share" onclick="share()" aria-label="공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></button>
+</div>
+<div id="lb" onclick="this.classList.remove('on')"><button class="x">×</button><img id="lbImg" alt=""></div>
+<div id="toast"></div>
+
+<script>
+/* ===== 설정: 여기 값만 바꾸면 날짜 관련 요소가 모두 따라갑니다 ===== */
+const WEDDING = new Date('2027-01-16T16:20:00+09:00');
+const TOGETHER_SINCE = new Date('2021-08-08T00:00:00+09:00');
+const SHARE_TITLE = '강준모 ♥ 홍세림 결혼합니다.';
+const SHARE_TEXT = '2027년 1월 16일 토요일 오후 4시 20분 · 아이벡스 컨벤션 5층';
+/* 참석 여부 전달 방식: RSVP_ENDPOINT(구글 앱스 스크립트 URL 등)가 있으면 그곳으로 전송, 없으면 신랑 번호로 문자 앱을 열어 내용을 채워줍니다 */
+const RSVP_ENDPOINT = '';
+const RSVP_SMS = '010-0000-0000';
+
+/* 사진 확장자 자동 대체 (jpg → jpeg → png → webp). hide=true면 사진 없을 때 상자째 숨김 */
+function altExt(im,hide){const b=im.dataset.alt;const ext=['jpeg','png','webp','JPG','PNG'];const k=+(im.dataset.k||0);
+ if(k<ext.length){im.dataset.k=k+1;im.src=b+'.'+ext[k]}else{im.onerror=null;if(hide){im.parentElement.classList.add('empty')}else{im.style.visibility='hidden'}}}
+
+/* 로딩 → 커버 손글씨 그리기 */
+setTimeout(()=>document.getElementById('loading').classList.add('out'),1300);
+(()=>{const ps=[...document.querySelectorAll('.cover .hs')];const lens=ps.map(p=>p.getTotalLength());const total=lens.reduce((a,b)=>a+b,0);const TOTAL_SEC=7.2;let t=0;
+ ps.forEach((p,i)=>{const d=TOTAL_SEC*lens[i]/total;p.style.setProperty('--len',lens[i]);p.style.setProperty('--dur',d+'s');p.style.setProperty('--delay',t+'s');t+=d});
+ setTimeout(()=>document.querySelector('.cover .script').classList.add('go'),1500)})();
+
+/* 등장 효과 */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('[aos]').forEach(el=>io.observe(el));
+
+/* 달력 */
+(()=>{const y=WEDDING.getFullYear(),m=WEDDING.getMonth(),d=WEDDING.getDate();
+const first=new Date(y,m,1).getDay(),last=new Date(y,m+1,0).getDate();
+const hh=WEDDING.getHours(),mm=WEDDING.getMinutes();
+const tl=(hh<12?'오전':'오후')+((hh%12)||12)+':'+String(mm).padStart(2,'0');
+let h='<caption><span>'+(m+1)+'월</span></caption><thead><tr><th class="color">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr></thead><tbody><tr>';
+let c=0;for(let i=0;i<first;i++){h+='<td></td>';c++}
+for(let i=1;i<=last;i++){if(c===7){h+='</tr><tr>';c=0}h+=i===d?'<td class="active">'+i+'<em>'+tl+'</em></td>':'<td>'+i+'</td>';c++}
+while(c<7){h+='<td></td>';c++}
+h+='</tr></tbody>';document.getElementById('calTable').innerHTML=h})();
+
+/* 카운트다운 + 함께한 시간 */
+function diffYMD(a,b){let y=b.getFullYear()-a.getFullYear(),mo=b.getMonth()-a.getMonth(),d=b.getDate()-a.getDate();
+ if(d<0){mo--;d+=new Date(b.getFullYear(),b.getMonth(),0).getDate()} if(mo<0){y--;mo+=12} return {y,mo,d}}
+function tick(){const now=new Date();let diff=Math.max(0,WEDDING-now);
+ uD.textContent=Math.floor(diff/864e5);uH.textContent=Math.floor(diff/36e5)%24;uM.textContent=Math.floor(diff/6e4)%60;uS.textContent=Math.floor(diff/1e3)%60;
+ const t=diffYMD(TOGETHER_SINCE,now);
+ ourDate.textContent='"'+t.y+'년 '+t.mo+'개월 '+t.d+'일 '+now.getHours()+'시간 '+now.getMinutes()+'분 '+now.getSeconds()+'초"'}
+tick();setInterval(tick,1000);
+
+/* 갤러리 슬라이더 */
+const track=document.getElementById('track'),slides=track.children,N=slides.length;
+function cur(){return Math.round(track.scrollLeft/track.clientWidth)}
+function slide(dir){let i=(cur()+dir+N)%N;track.scrollTo({left:i*track.clientWidth,behavior:'smooth'})}
+track.addEventListener('scroll',()=>{fraction.textContent=(cur()+1)+' / '+N},{passive:true});
+[...track.querySelectorAll('img')].forEach(im=>im.addEventListener('click',()=>{if(im.style.visibility==='hidden')return;lbImg.src=im.src;lb.classList.add('on')}));
+
+/* 안내 탭 */
+function tab(i){document.querySelectorAll('.notice .tabs button').forEach((b,j)=>b.classList.toggle('active',i===j));document.querySelectorAll('.notice .panel').forEach((p,j)=>p.classList.toggle('active',i===j))}
+
+/* 복사 · 토스트 · 공유 · 맨 위로 */
+let tt;function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1800)}
+async function copyText(s,msg){try{await navigator.clipboard.writeText(s)}catch(e){const ta=document.createElement('textarea');ta.value=s;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove()}toast(msg||'복사했습니다')}
+function copyAcct(btn,num){copyText(num,'계좌번호를 복사했습니다');btn.textContent='복사 완료';btn.classList.add('ok');setTimeout(()=>{btn.textContent='복사';btn.classList.remove('ok')},1800)}
+async function share(){if(navigator.share){try{await navigator.share({title:SHARE_TITLE,text:SHARE_TEXT,url:location.href})}catch(e){}}else{copyText(location.href,'링크를 복사했습니다')}}
+window.addEventListener('scroll',()=>{upBtn.classList.toggle('show',window.scrollY>600)},{passive:true});
+
+/* 참석 여부 팝업 (첫 진입 · 오늘하루 보지않기) */
+const HIDE_KEY='rsvp-hide-until';
+function showRsvpPopup(){let until=0;try{until=+localStorage.getItem(HIDE_KEY)||0}catch(e){}if(Date.now()<until)return;document.getElementById('rsvpPopup').classList.add('active')}
+function closeRsvpPopup(){if(document.getElementById('hideToday').checked){const d=new Date();d.setHours(24,0,0,0);try{localStorage.setItem(HIDE_KEY,d.getTime())}catch(e){}}document.getElementById('rsvpPopup').classList.remove('active')}
+if(location.hash==='#rsvp'){openRsvp()}else{setTimeout(showRsvpPopup,6000)}
+function openRsvp(){document.getElementById('rsvpModal').classList.add('active');document.body.style.overflow='hidden'}
+function closeRsvp(){document.getElementById('rsvpModal').classList.remove('active');document.body.style.overflow=''}
+function val(n){const el=document.querySelector('input[name="'+n+'"]:checked');return el?el.value:''}
+async function submitRsvp(){const d={kind:val('kind'),attend:val('attend'),meal:val('meal'),name:rName.value.trim(),people:rPeople.value.trim(),memo:rMemo.value.trim()};
+ if(!d.kind||!d.attend||!d.meal||!d.name){toast('필수 항목을 모두 선택해 주세요');return}
+ if(!rAgree.checked){toast('개인정보 수집 및 활용에 동의해 주세요');return}
+ if(RSVP_ENDPOINT){try{await fetch(RSVP_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({...d,at:new Date().toISOString()})});toast('참석 여부가 전달되었습니다. 감사합니다');closeRsvp();rsvpForm.reset();return}catch(e){}}
+ const msg='[참석 여부] '+d.kind+'측 · '+d.attend+' · 식사 '+d.meal+' · '+d.name+(d.people?' (동행: '+d.people+')':'')+(d.memo?' · '+d.memo:'');
+ location.href='sms:'+RSVP_SMS+(/iPhone|iPad/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(msg);
+ toast('문자 앱에서 전송을 눌러 주세요');closeRsvp()}
+</script>
+</body>
+</html>

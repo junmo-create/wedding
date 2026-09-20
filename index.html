@@ -542,8 +542,8 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
       <div class="chk"><input type="radio" name="meal" value="식사함" id="m1"><label for="m1">○</label><input type="radio" name="meal" value="식사 안 함" id="m2"><label for="m2">✕</label><input type="radio" name="meal" value="미정" id="m3"><label for="m3">미정</label></div>
       <div class="chk_title">성함 <span class="essential">*</span></div>
       <input type="text" id="rName" maxlength="20" autocomplete="name">
-      <div class="chk_title">동행인 성함</div>
-      <input type="text" id="rPeople" maxlength="60" placeholder="동행인이 있으면 성함을 적어주세요">
+      <div class="chk_title">동행 인원 <small style="color:#999;font-weight:400">(본인 제외)</small></div>
+      <div class="chk"><input type="radio" name="people" value="0" id="p0" checked><label for="p0">없음</label><input type="radio" name="people" value="1" id="p1"><label for="p1">1명</label><input type="radio" name="people" value="2" id="p2"><label for="p2">2명</label><input type="radio" name="people" value="3" id="p3"><label for="p3">3명</label><input type="radio" name="people" value="4" id="p4"><label for="p4">4명</label><input type="radio" name="people" value="5" id="p5"><label for="p5">5명</label></div>
       <div class="chk_title">전달사항</div>
       <textarea id="rMemo" maxlength="300"></textarea>
       <label class="agree"><input type="checkbox" id="rAgree"><i>✓</i>개인정보 수집 및 활용 동의<small>(참석 확인 목적으로만 사용하며 예식 후 삭제합니다)</small></label>
@@ -625,11 +625,11 @@ if(location.hash==='#rsvp'){openRsvp()}else{setTimeout(showRsvpPopup,6000)}
 function openRsvp(){document.getElementById('rsvpModal').classList.add('active');document.body.style.overflow='hidden'}
 function closeRsvp(){document.getElementById('rsvpModal').classList.remove('active');document.body.style.overflow=''}
 function val(n){const el=document.querySelector('input[name="'+n+'"]:checked');return el?el.value:''}
-async function submitRsvp(){const d={kind:val('kind'),attend:val('attend'),meal:val('meal'),name:rName.value.trim(),people:rPeople.value.trim(),memo:rMemo.value.trim()};
+async function submitRsvp(){const d={kind:val('kind'),attend:val('attend'),meal:val('meal'),name:rName.value.trim(),people:Number(val('people')||0),memo:rMemo.value.trim()};
  if(!d.kind||!d.attend||!d.meal||!d.name){toast('필수 항목을 모두 선택해 주세요');return}
  if(!rAgree.checked){toast('개인정보 수집 및 활용에 동의해 주세요');return}
  if(RSVP_ENDPOINT){try{await fetch(RSVP_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({...d,at:new Date().toISOString()})});toast('참석 여부가 전달되었습니다. 감사합니다');closeRsvp();rsvpForm.reset();return}catch(e){}}
- const msg='[참석 여부] '+d.kind+'측 · '+d.attend+' · 식사 '+d.meal+' · '+d.name+(d.people?' (동행: '+d.people+')':'')+(d.memo?' · '+d.memo:'');
+ const msg='[참석 여부] '+d.kind+'측 · '+d.attend+' · 식사 '+d.meal+' · '+d.name+(d.people?' (동행 '+d.people+'명)':'')+(d.memo?' · '+d.memo:'');
  location.href='sms:'+(RSVP_SMS[d.kind]||RSVP_SMS['신랑'])+(/iPhone|iPad/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(msg);
  toast('문자 앱에서 전송을 눌러 주세요');closeRsvp()}
 </script>

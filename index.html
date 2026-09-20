@@ -91,6 +91,8 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
 .gallery .track::-webkit-scrollbar{display:none}
 .gallery .track>div{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5;background:#f0efec}
 .gallery .track img{width:100%;height:100%;object-fit:cover}
+.gallery .track>div.fit{background:#fff}
+.gallery .track>div.fit img{object-fit:contain}   /* 추가 사진(07~): 자르지 않고 원본 비율 그대로 */
 .gallery .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;color:#fff;text-shadow:0 0 6px rgba(0,0,0,.5);font-size:30px;line-height:44px}
 .gallery .nav.prev{left:4px}.gallery .nav.next{right:4px}
 .gallery .fraction{font-size:var(--f-s);color:#8d8e90;margin-top:14px;letter-spacing:.1em}
@@ -299,11 +301,45 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
         <div><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-04.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-04" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
         <div><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-05.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-05" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
         <div><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-06.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-06" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-07.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-07" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-08.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-08" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-09.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-09" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-10.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-10" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-11.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-11" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-12.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-12" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-13.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-13" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-14.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-14" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-15.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-15" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-16.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-16" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-17.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-17" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-18.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-18" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-19.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-19" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-20.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-20" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-21.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-21" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-22.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-22" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-23.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-23" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-24.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-24" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-25.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-25" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-26.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-26" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-27.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-27" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-28.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-28" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-29.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-29" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-30.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-30" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-31.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-31" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-32.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-32" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-33.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-33" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-34.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-34" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-35.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-35" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-36.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-36" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-37.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-37" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-38.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-38" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-39.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-39" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
+        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-40.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-40" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
       </div>
       <button class="nav prev" onclick="slide(-1)" aria-label="이전">‹</button>
       <button class="nav next" onclick="slide(1)" aria-label="다음">›</button>
     </div>
-    <div class="fraction" id="fraction">1 / 6</div>
+    <div class="fraction" id="fraction">1 / 40</div>
   </div>
 </section>
 
@@ -435,17 +471,23 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
       <div class="account_wrap groom">
         <div class="account_box" onclick="this.parentElement.classList.toggle('open')">신랑측<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
         <ul class="account_list">
-          <li><div><h4>신랑</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">강준모</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
-          <li><div><h4>신랑 아버지</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">강인구</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+          <li><div><h4>신랑</h4><div class="acc_num">374-060067-01-015</div><div class="acc_name"><span class="bank">IBK기업은행</span><span class="holder">강준모</span></div></div><button class="s_btn" onclick="copyAcct(this,'374-060067-01-015')">복사</button></li>
+          <li><div><h4>신랑 아버지</h4><div class="acc_num">606-02-268732</div><div class="acc_name"><span class="bank">신한은행</span><span class="holder">강인구</span></div></div><button class="s_btn" onclick="copyAcct(this,'606-02-268732')">복사</button></li>
+          <!-- 계좌 미정: 받으면 주석을 풀고 은행명·번호를 넣는다
           <li><div><h4>신랑 어머니</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">서희경</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+          -->
         </ul>
       </div>
       <div class="account_wrap bride">
         <div class="account_box bride_account" onclick="this.parentElement.classList.toggle('open')">신부측<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
         <ul class="account_list">
-          <li><div><h4>신부</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">홍세림</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+          <li><div><h4>신부</h4><div class="acc_num">620-250070-187</div><div class="acc_name"><span class="bank">하나은행</span><span class="holder">홍세림</span></div></div><button class="s_btn" onclick="copyAcct(this,'620-250070-187')">복사</button></li>
+          <!-- 계좌 미정: 받으면 주석을 풀고 은행명·번호를 넣는다
           <li><div><h4>신부 아버지</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">홍광종</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+          -->
+          <!-- 계좌 미정: 받으면 주석을 풀고 은행명·번호를 넣는다
           <li><div><h4>신부 어머니</h4><div class="acc_num todo">000-0000-0000</div><div class="acc_name"><span class="bank todo">은행명</span><span class="holder">박영례</span></div></div><button class="s_btn" onclick="copyAcct(this,'000-0000-0000')">복사</button></li>
+          -->
         </ul>
       </div>
     </div>

@@ -58,9 +58,7 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
 .cover img{width:100%;height:100%;object-fit:cover}
 .cover .script{position:absolute;left:50%;top:74%;transform:translate(-50%,-74%);width:92%}
 .cover .hand{width:100%;display:block;overflow:visible}
-.cover .hs{fill:none;stroke:var(--script);stroke-width:300;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
-.cover .script.go .hs{animation:draw var(--dur) linear var(--delay) forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
+.cover .hs{fill:none;stroke:var(--script);stroke-width:300;stroke-linecap:round;stroke-linejoin:round}
 .cover .scroll{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);color:#fff;font-size:var(--f-xs);letter-spacing:.2em;opacity:.85;text-shadow:0 1px 4px rgba(0,0,0,.4)}
 .cover .scroll span{display:block;width:1px;height:26px;background:#fff;margin:0 auto 6px;animation:scrollLine 1.6s ease-in-out infinite}
 @keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -251,19 +249,6 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
   <div class="scroll"><span></span>스크롤</div>
 </section>
 
-<!-- ===== 2. 글귀 ===== -->
-<section class="poem" aos>
-  <div class="utext">
-<p>You can not be happy every day.</p>
-<p>But there are happy things every day.</p>
-<p></p>
-<p>매일 행복할 순 없지만,</p>
-<p>행복한 것들은 매일 있어.</p>
-<p></p>
-<p>&lt;월트 디즈니&gt;, 곰돌이 푸 中</p>
-  </div>
-</section>
-
 <!-- ===== 3. 인사말 ===== -->
 <section class="greeting">
   <div aos>
@@ -289,12 +274,12 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
     <div class="img_box"><img src="사진/02_신랑신부_정방형_1000x1000/portrait-bride.jpg" data-alt="사진/02_신랑신부_정방형_1000x1000/portrait-bride" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
   </div>
   <div class="name_con">
-    <div class="name_list groom"><div class="name_box">신랑<span class="name">강준모</span></div><a class="icon todo" href="tel:010-0000-0000" aria-label="신랑에게 전화"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a></div>
-    <div class="name_list bride"><div class="name_box">신부<span class="name">홍세림</span></div><a class="icon todo" href="tel:010-0000-0000" aria-label="신부에게 전화"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a></div>
+    <div class="name_list groom"><div class="name_box">신랑<span class="name">강준모</span></div><a class="icon" href="tel:010-8824-0618" aria-label="신랑에게 전화"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a></div>
+    <div class="name_list bride"><div class="name_box">신부<span class="name">홍세림</span></div><a class="icon" href="tel:010-9357-3436" aria-label="신부에게 전화"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a></div>
   </div>
   <div class="intro_con">
-    <div class="intro_list"><p>98년 6월 18일</p><p class="todo">사는 곳</p><p>식품 상품기획 MD 🍰</p><p></p><p>저희 행복하게</p></div>
-    <div class="intro_list"><p>98년 8월 5일</p><p class="todo">사는 곳</p><p class="todo">직업 한 줄</p><p></p><p>잘 살겠습니다 :)</p></div>
+    <div class="intro_list"><p>98년 6월 18일</p><p></p><p>저희 행복하게</p></div>
+    <div class="intro_list"><p>98년 8월 5일</p><p></p><p>잘 살겠습니다 :)</p></div>
   </div>
   <div class="relation_con">
     <div class="relation_list">강인구 · 서희경<span class="rel">의 아들</span></div>
@@ -330,7 +315,6 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
     <button onclick="tab(2)">예식 안내</button>
   </div>
   <div class="panel active">
-    <div class="img_box"><img src="사진/06_안내탭(선택)_가로4x3_1200x900/tab-01.jpg" data-alt="사진/06_안내탭(선택)_가로4x3_1200x900/tab-01" onerror="altExt(this,true)" onload="this.classList.add('ok')" alt=""></div>
     <div class="desc">
 <p>U PLANET(AK플라자) 지하 B3~B8층에</p>
 <p>3,200대 주차가 가능합니다.</p>
@@ -347,7 +331,6 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
     </div>
   </div>
   <div class="panel">
-    <div class="img_box"><img src="사진/06_안내탭(선택)_가로4x3_1200x900/tab-02.jpg" data-alt="사진/06_안내탭(선택)_가로4x3_1200x900/tab-02" onerror="altExt(this,true)" onload="this.classList.add('ok')" alt=""></div>
     <div class="desc">
 <p>광명역에서 오실 경우</p>
 <p><mark>1번 출구 앞 보행자도로</mark>를 이용해 주세요.</p>
@@ -363,14 +346,10 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
     </div>
   </div>
   <div class="panel">
-    <div class="img_box"><img src="사진/06_안내탭(선택)_가로4x3_1200x900/tab-03.jpg" data-alt="사진/06_안내탭(선택)_가로4x3_1200x900/tab-03" onerror="altExt(this,true)" onload="this.classList.add('ok')" alt=""></div>
     <div class="desc">
 <p>예식은 오후 4시 20분에 시작합니다.</p>
 <p>식사는 예식 후 같은 층 연회장에</p>
 <p>준비되어 있습니다.</p>
-<p></p>
-<p>화환은 정중히 사양합니다.</p>
-<p>축하해 주시는 마음만 감사히 받겠습니다.</p>
     </div>
   </div>
 </section>
@@ -408,7 +387,7 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
       <div class="map_box"><iframe loading="lazy" src="https://www.google.com/maps?q=%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98+%EA%B4%91%EB%AA%85&z=16&hl=ko&output=embed" title="지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="navi">
         <a href="tmap://search?name=%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98"><i style="background:#e0225b"></i>티맵</a>
-        <a href="https://map.kakao.com/link/search/%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98" target="_blank" rel="noopener"><i style="background:#fee500"></i>카카오내비</a>
+        <a href="https://map.kakao.com/link/search/%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98" target="_blank" rel="noopener"><i style="background:#fee500"></i>카카오네비</a>
         <a href="https://map.naver.com/p/search/%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98" target="_blank" rel="noopener"><i style="background:#03c75a"></i>네이버지도</a>
       </div>
     </div>
@@ -548,19 +527,16 @@ const WEDDING = new Date('2027-01-16T16:20:00+09:00');
 const TOGETHER_SINCE = new Date('2021-08-08T00:00:00+09:00');
 const SHARE_TITLE = '강준모 ♥ 홍세림 결혼합니다.';
 const SHARE_TEXT = '2027년 1월 16일 토요일 오후 4시 20분 · 아이벡스 컨벤션 5층';
-/* 참석 여부 전달 방식: RSVP_ENDPOINT(구글 앱스 스크립트 URL 등)가 있으면 그곳으로 전송, 없으면 신랑 번호로 문자 앱을 열어 내용을 채워줍니다 */
+/* 참석 여부 전달 방식: RSVP_ENDPOINT(구글 앱스 스크립트 URL 등)가 있으면 그곳으로 전송, 없으면 하객이 고른 쪽(신랑/신부) 번호로 문자 앱을 열어 내용을 채워줍니다 */
 const RSVP_ENDPOINT = '';
-const RSVP_SMS = '010-0000-0000';
+const RSVP_SMS = {'신랑':'010-8824-0618','신부':'010-9357-3436'};
 
 /* 사진 확장자 자동 대체 (jpg → jpeg → png → webp). hide=true면 사진 없을 때 상자째 숨김 */
 function altExt(im,hide){const b=im.dataset.alt;const ext=['jpeg','png','webp','JPG','PNG'];const k=+(im.dataset.k||0);
  if(k<ext.length){im.dataset.k=k+1;im.src=b+'.'+ext[k]}else{im.onerror=null;if(hide){im.parentElement.classList.add('empty')}else{im.style.visibility='hidden'}}}
 
-/* 로딩 → 커버 손글씨 그리기 */
+/* 로딩 (커버 손글씨는 애니메이션 없이 바로 표시) */
 setTimeout(()=>document.getElementById('loading').classList.add('out'),1300);
-(()=>{const ps=[...document.querySelectorAll('.cover .hs')];const lens=ps.map(p=>p.getTotalLength());const total=lens.reduce((a,b)=>a+b,0);const TOTAL_SEC=7.2;let t=0;
- ps.forEach((p,i)=>{const d=TOTAL_SEC*lens[i]/total;p.style.setProperty('--len',lens[i]);p.style.setProperty('--dur',d+'s');p.style.setProperty('--delay',t+'s');t+=d});
- setTimeout(()=>document.querySelector('.cover .script').classList.add('go'),1500)})();
 
 /* 등장 효과 */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
@@ -616,7 +592,7 @@ async function submitRsvp(){const d={kind:val('kind'),attend:val('attend'),meal:
  if(!rAgree.checked){toast('개인정보 수집 및 활용에 동의해 주세요');return}
  if(RSVP_ENDPOINT){try{await fetch(RSVP_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({...d,at:new Date().toISOString()})});toast('참석 여부가 전달되었습니다. 감사합니다');closeRsvp();rsvpForm.reset();return}catch(e){}}
  const msg='[참석 여부] '+d.kind+'측 · '+d.attend+' · 식사 '+d.meal+' · '+d.name+(d.people?' (동행: '+d.people+')':'')+(d.memo?' · '+d.memo:'');
- location.href='sms:'+RSVP_SMS+(/iPhone|iPad/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(msg);
+ location.href='sms:'+(RSVP_SMS[d.kind]||RSVP_SMS['신랑'])+(/iPhone|iPad/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(msg);
  toast('문자 앱에서 전송을 눌러 주세요');closeRsvp()}
 </script>
 </body>

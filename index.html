@@ -78,28 +78,26 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
 .couple .name_box{font-size:var(--f-s)}
 .couple .groom .name_box{color:var(--groom)}.couple .bride .name_box{color:var(--bride)}
 .couple .name_box .name{font-size:var(--f-m);color:var(--text);margin-left:4px}
-.couple .icon svg{width:15px;height:15px;color:var(--point1);filter:drop-shadow(1px 1px 1px rgba(0,0,0,.15))}
-.couple .intro_con{display:flex;gap:5px}
-.couple .intro_list{flex:1;font-size:15px;line-height:1.6}
 .couple .relation_con{display:flex;gap:5px;margin-top:20px}
 .couple .relation_list{flex:1;font-size:13px}
 .couple .relation_list .rel{margin-left:4px}
 
 /* ===== 5. 갤러리 ===== */
-.gallery .slider{position:relative}
-.gallery .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.gallery .track::-webkit-scrollbar{display:none}
-.gallery .track>div{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5;background:#f0efec}
-.gallery .track img{width:100%;height:100%;object-fit:cover}
-.gallery .track>div.fit{background:#fff}
-.gallery .track>div.fit img{object-fit:contain}   /* 가로(5:4) 사진: 4:5 칸 안에 자르지 않고 표시 */
-.gallery .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;color:#fff;text-shadow:0 0 6px rgba(0,0,0,.5);font-size:30px;line-height:44px}
-.gallery .nav.prev{left:4px}.gallery .nav.next{right:4px}
-.gallery .fraction{font-size:var(--f-s);color:#8d8e90;margin-top:14px;letter-spacing:.1em}
-#lb{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:200;display:none;align-items:center;justify-content:center}
-#lb.on{display:flex}
-#lb img{max-width:100%;max-height:100%;object-fit:contain}
-#lb .x{position:absolute;top:12px;right:16px;color:#fff;font-size:30px}
+.gallery .g_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:0 15px}
+.gallery .g_item{aspect-ratio:1;overflow:hidden;background:#f0efec;padding:0;border:0;display:block;width:100%}
+.gallery .g_item img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery .g_grid:not(.all) .g_item:nth-child(n+10){display:none}   /* 처음엔 9장(3x3)만, 더보기로 전체 */
+.gallery .g_more{margin-top:22px;padding:10px 34px;border:1px solid var(--point1);border-radius:999px;color:var(--point1);font-size:var(--f-s);background:#fff;letter-spacing:.05em}
+#gv{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:200;display:none;flex-direction:column;justify-content:center}
+#gv.on{display:flex}
+#gv .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;height:80vh}
+#gv .track::-webkit-scrollbar{display:none}
+#gv .track>div{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center}
+#gv .track img{max-width:100%;max-height:100%;object-fit:contain}
+#gv .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;color:#fff;text-shadow:0 0 6px rgba(0,0,0,.5);font-size:30px;line-height:44px}
+#gv .nav.prev{left:4px}#gv .nav.next{right:4px}
+#gv .fraction{position:absolute;left:0;right:0;bottom:24px;text-align:center;font-size:var(--f-s);color:#ccc;letter-spacing:.1em}
+#gv .x{position:absolute;top:12px;right:16px;color:#fff;font-size:30px;z-index:1}
 
 /* ===== 6. 안내 탭 ===== */
 .notice .tabs{display:flex;border-bottom:1px solid var(--line);margin:0 20px 20px}
@@ -276,12 +274,8 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
     <div class="img_box"><img src="사진/02_신랑신부_정방형_1000x1000/portrait-bride.jpg" data-alt="사진/02_신랑신부_정방형_1000x1000/portrait-bride" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
   </div>
   <div class="name_con">
-    <div class="name_list groom"><div class="name_box">신랑<span class="name">강준모</span></div><a class="icon" href="tel:010-8824-0618" aria-label="신랑에게 전화"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a></div>
-    <div class="name_list bride"><div class="name_box">신부<span class="name">홍세림</span></div><a class="icon" href="tel:010-9357-3436" aria-label="신부에게 전화"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a></div>
-  </div>
-  <div class="intro_con">
-    <div class="intro_list"><p>98년 6월 18일</p><p></p><p>저희 행복하게</p></div>
-    <div class="intro_list"><p>98년 8월 5일</p><p></p><p>잘 살겠습니다 :)</p></div>
+    <div class="name_list groom"><div class="name_box">신랑<span class="name">강준모</span></div></div>
+    <div class="name_list bride"><div class="name_box">신부<span class="name">홍세림</span></div></div>
   </div>
   <div class="relation_con">
     <div class="relation_list">강인구 · 서희경<span class="rel">의 아들</span></div>
@@ -293,53 +287,49 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
 <section class="gallery">
   <div class="inner">
     <div class="title" aos><h2>갤러리</h2></div>
-    <div class="slider" aos>
-      <div class="track" id="track">
-        <div class="fit"><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-01.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-01" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-02.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-02" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-03.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-03" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-04.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-04" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-05.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-05" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img src="사진/03_갤러리_세로4x5_1200x1500/gallery-06.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-06" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-07.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-07" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-08.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-08" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-09.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-09" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-10.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-10" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-11.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-11" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-12.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-12" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-13.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-13" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-14.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-14" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-15.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-15" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-16.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-16" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-17.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-17" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-18.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-18" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-19.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-19" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-20.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-20" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-21.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-21" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-22.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-22" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-23.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-23" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-24.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-24" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-25.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-25" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-26.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-26" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-27.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-27" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-28.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-28" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-29.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-29" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-30.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-30" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-31.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-31" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-32.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-32" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-33.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-33" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-34.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-34" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-35.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-35" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div class="fit"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-36.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-36" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-37.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-37" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-38.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-38" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-39.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-39" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-        <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-40.jpg" data-alt="사진/03_갤러리_세로4x5_1200x1500/gallery-40" onerror="altExt(this)" onload="this.classList.add('ok')" alt=""></div>
-      </div>
-      <button class="nav prev" onclick="slide(-1)" aria-label="이전">‹</button>
-      <button class="nav next" onclick="slide(1)" aria-label="다음">›</button>
+    <div class="g_grid" id="gGrid" aos>
+      <button class="g_item" onclick="gOpen(0)" aria-label="사진 1 크게 보기"><img src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-01.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(1)" aria-label="사진 2 크게 보기"><img src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-02.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(2)" aria-label="사진 3 크게 보기"><img src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-03.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(3)" aria-label="사진 4 크게 보기"><img src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-04.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(4)" aria-label="사진 5 크게 보기"><img src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-05.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(5)" aria-label="사진 6 크게 보기"><img src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-06.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(6)" aria-label="사진 7 크게 보기"><img src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-07.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(7)" aria-label="사진 8 크게 보기"><img src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-08.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(8)" aria-label="사진 9 크게 보기"><img src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-09.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(9)" aria-label="사진 10 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-10.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(10)" aria-label="사진 11 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-11.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(11)" aria-label="사진 12 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-12.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(12)" aria-label="사진 13 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-13.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(13)" aria-label="사진 14 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-14.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(14)" aria-label="사진 15 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-15.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(15)" aria-label="사진 16 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-16.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(16)" aria-label="사진 17 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-17.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(17)" aria-label="사진 18 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-18.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(18)" aria-label="사진 19 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-19.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(19)" aria-label="사진 20 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-20.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(20)" aria-label="사진 21 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-21.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(21)" aria-label="사진 22 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-22.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(22)" aria-label="사진 23 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-23.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(23)" aria-label="사진 24 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-24.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(24)" aria-label="사진 25 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-25.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(25)" aria-label="사진 26 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-26.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(26)" aria-label="사진 27 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-27.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(27)" aria-label="사진 28 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-28.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(28)" aria-label="사진 29 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-29.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(29)" aria-label="사진 30 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-30.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(30)" aria-label="사진 31 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-31.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(31)" aria-label="사진 32 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-32.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(32)" aria-label="사진 33 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-33.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(33)" aria-label="사진 34 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-34.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(34)" aria-label="사진 35 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-35.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(35)" aria-label="사진 36 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-36.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(36)" aria-label="사진 37 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-37.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(37)" aria-label="사진 38 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-38.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(38)" aria-label="사진 39 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-39.jpg" alt=""></button>
+      <button class="g_item" onclick="gOpen(39)" aria-label="사진 40 크게 보기"><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/thumb/gallery-40.jpg" alt=""></button>
     </div>
-    <div class="fraction" id="fraction">1 / 40</div>
+    <button class="g_more" id="gMore" onclick="gMore()">더보기</button>
   </div>
 </section>
 
@@ -554,7 +544,54 @@ img[data-alt]{opacity:0;transition:opacity .5s}img[data-alt].ok{opacity:1}
   <button class="up" id="upBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 15l6-6 6 6"/></svg></button>
   <button class="share" onclick="share()" aria-label="공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></button>
 </div>
-<div id="lb" onclick="this.classList.remove('on')"><button class="x">×</button><img id="lbImg" alt=""></div>
+<div id="gv" aria-hidden="true">
+  <button class="x" onclick="gClose()" aria-label="닫기">×</button>
+  <div class="track" id="track">
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-01.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-02.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-03.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-04.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-05.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-06.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-07.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-08.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-09.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-10.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-11.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-12.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-13.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-14.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-15.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-16.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-17.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-18.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-19.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-20.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-21.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-22.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-23.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-24.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-25.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-26.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-27.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-28.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-29.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-30.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-31.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-32.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-33.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-34.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-35.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-36.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-37.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-38.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-39.jpg" alt=""></div>
+    <div><img loading="lazy" src="사진/03_갤러리_세로4x5_1200x1500/gallery-40.jpg" alt=""></div>
+  </div>
+  <button class="nav prev" onclick="slide(-1)" aria-label="이전">‹</button>
+  <button class="nav next" onclick="slide(1)" aria-label="다음">›</button>
+  <div class="fraction" id="fraction">1 / 40</div>
+</div>
 <div id="toast"></div>
 
 <script>
@@ -598,12 +635,15 @@ function tick(){const now=new Date();let diff=Math.max(0,WEDDING-now);
  ourDate.textContent='"'+t.y+'년 '+t.mo+'개월 '+t.d+'일 '+now.getHours()+'시간 '+now.getMinutes()+'분 '+now.getSeconds()+'초"'}
 tick();setInterval(tick,1000);
 
-/* 갤러리 슬라이더 */
-const track=document.getElementById('track'),slides=track.children,N=slides.length;
+/* 갤러리: 3x3 격자 + 더보기 + 전체화면 보기 */
+const gv=document.getElementById('gv'),track=document.getElementById('track'),N=track.children.length;
 function cur(){return Math.round(track.scrollLeft/track.clientWidth)}
 function slide(dir){let i=(cur()+dir+N)%N;track.scrollTo({left:i*track.clientWidth,behavior:'smooth'})}
 track.addEventListener('scroll',()=>{fraction.textContent=(cur()+1)+' / '+N},{passive:true});
-[...track.querySelectorAll('img')].forEach(im=>im.addEventListener('click',()=>{if(im.style.visibility==='hidden')return;lbImg.src=im.src;lb.classList.add('on')}));
+function gOpen(i){gv.classList.add('on');gv.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';track.scrollLeft=i*track.clientWidth;fraction.textContent=(i+1)+' / '+N}
+function gClose(){gv.classList.remove('on');gv.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+function gMore(){const g=document.getElementById('gGrid'),on=g.classList.toggle('all');document.getElementById('gMore').textContent=on?'접기':'더보기';if(!on)g.scrollIntoView({block:'start'})}
+document.addEventListener('keydown',e=>{if(!gv.classList.contains('on'))return;if(e.key==='Escape')gClose();if(e.key==='ArrowLeft')slide(-1);if(e.key==='ArrowRight')slide(1)});
 
 /* 안내 탭 */
 function tab(i){document.querySelectorAll('.notice .tabs button').forEach((b,j)=>b.classList.toggle('active',i===j));document.querySelectorAll('.notice .panel').forEach((p,j)=>p.classList.toggle('active',i===j))}

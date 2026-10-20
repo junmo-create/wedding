@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>강준모 ❤️ 홍세림 결혼합니다.</title>
+<meta property="og:title" content="강준모 ❤️ 홍세림 결혼합니다.">
+<meta property="og:description" content="2027년 1월 16일 토요일 오후 4시 20분 · 아이벡스 컨벤션 5층">
+<meta property="og:image" content="사진/01_커버_세로1x2_1500x3000/main.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parisienne&family=DM+Serif+Text&family=EB+Garamond:wght@400;500&family=Nunito+Sans:wght@300;400&family=Noto+Serif+KR:wght@400;600&display=swap">
+<style>
+/* ===== 폰트 (레퍼런스와 동일 서체) ===== */
+@font-face{font-family:RIDIBatang;font-weight:400;font-display:swap;src:url(https://cdn7.makedear.com/assets/fonts/RIDIBatang-subset-2.woff2) format("woff2")}
+@font-face{font-family:RIDIBatang;font-weight:700;font-display:swap;src:url("https://cdn7.makedear.com/assets/fonts/RIDIBatang-subset-2-700(35,%2035).woff2") format("woff2")}
+@font-face{font-family:SunBatang;font-weight:400;font-display:swap;src:url(https://cdn7.makedear.com/assets/fonts/SunBatang-subset-Light.woff2) format("woff2")}
+
+/* ===== 테마 토큰 (natural-green / style11) ===== */
+:root{
+  --accent:#567a59;          /* 라벨·숫자·아이콘 */
+  --line:#e6f5e3;            /* 구분선 */
+  --btn-bg:#f3f6f3;          /* 버튼·박스 배경 */
+  --btn-line:#e0e8e1;        /* 버튼·박스 테두리 */
+  --marker:#a2bda5;          /* 달력 D-day 원, 타임라인 점 */
+  --muted:#9a9a9a;
+  --groom:#23679f;
+  --bride:#d08c95;
+  --sat:#3b82f6;
+  --serif-ko:RIDIBatang,"Noto Serif KR",Georgia,serif;
+  --poem:SunBatang,"Noto Serif KR",Georgia,serif;
+  --label:Parisienne,cursive;
+  --en-serif:"DM Serif Text","Noto Serif KR",serif;
+  --garamond:"EB Garamond",Georgia,serif;
+  --sans:"Pretendard Variable",Pretendard,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:#e9ebe8;color:#000;font-family:var(--serif-ko);font-size:13.64px;line-height:1.8;letter-spacing:-.05em;word-break:keep-all}
+#app{max-width:430px;margin:0 auto;background:#fff;min-height:100vh;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.06)}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;letter-spacing:inherit}
+a{color:inherit;text-decoration:none}
+p{white-space:pre-wrap}
+
+/* ===== 공통 섹션 ===== */
+section{padding:4.7em 0;text-align:center;position:relative;background:#fff}
+section.tight{padding:0}
+.label{font-family:var(--label);color:var(--accent);font-size:1em;letter-spacing:.15em;line-height:1.8;padding-bottom:1em}
+.subtitle{font-weight:600;font-size:1.125em;letter-spacing:-.05em;padding-bottom:1em}
+.line{width:2.2em;height:0;border:0;border-top:1px solid var(--line);margin:0 auto 2.4em}
+.body{padding:0 2.2em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4em;background:var(--btn-bg);border:1px solid var(--btn-line);border-radius:.47em;padding:.5em 1em;min-height:2.9em;font-size:1em;letter-spacing:-.05em;color:#000;transition:background .2s}
+.btn:active{background:#e6ece6}
+.btn.block{width:100%}
+.btn.pill{border-radius:999px;padding:.2em 1.2em;min-height:0;background:rgba(255,255,255,.5);border-color:rgba(230,245,227,.8)}
+
+/* 스크롤 등장 */
+.rv{opacity:0;transform:translate3d(0,20px,0);transition:opacity 2.2s cubic-bezier(.16,1,.3,1) .15s,transform 2.2s cubic-bezier(.16,1,.3,1) .15s}
+.rv.in{opacity:1;transform:none}
+
+/* ===== 인트로 ===== */
+#intro{position:fixed;inset:0;z-index:100;background:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.2em;transition:opacity 1.2s ease}
+#intro.out{opacity:0;pointer-events:none}
+#intro .names{font-family:var(--en-serif);font-size:1.7em;letter-spacing:.08em;color:#333}
+#intro .date{font-family:var(--garamond);font-size:.95em;letter-spacing:.3em;color:var(--accent)}
+
+/* ===== 커버 ===== */
+.cover{position:relative;width:100%;aspect-ratio:1/2;overflow:hidden;background:#dfe5dc}
+.cover>img.main{width:100%;height:100%;object-fit:cover;animation:coverIn 2.6s ease both}
+.cover .leaves{position:absolute;inset:0;width:100%;height:auto;pointer-events:none;z-index:3;mask-image:linear-gradient(to bottom,#000 95%,transparent);-webkit-mask-image:linear-gradient(to bottom,#000 95%,transparent)}
+.cover .shade{position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(0,0,0,.35),transparent);z-index:2}
+.cover .txt{position:absolute;left:0;right:0;bottom:6%;z-index:4;color:#fff;text-align:center;text-shadow:0 1px 8px rgba(0,0,0,.25)}
+.cover .names{font-family:var(--sans);font-weight:300;font-size:1.05em;letter-spacing:.1em;opacity:.95;animation:fadeUp 1.4s ease 2.2s both}
+.cover .date{font-family:var(--en-serif);font-size:1.75em;letter-spacing:.06em;line-height:1.1;margin:.6em 0 .9em}
+.cover .date span{display:inline-block;animation:fadeUp .9s ease both}
+.cover .greet{font-family:"Nunito Sans",var(--sans);font-weight:300;font-size:.58em;letter-spacing:.02em;line-height:1.5;padding:0 1.5em;animation:fadeUp 1.4s ease 3.6s both}
+@keyframes coverIn{from{transform:scale(1.06);filter:brightness(1.35) saturate(.6)}to{transform:none;filter:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* ===== 글귀 ===== */
+.poem .leaf{width:1.4em;margin:0 auto 3.2em}
+.poem .txt{font-family:var(--poem);letter-spacing:-.05em;line-height:1.8}
+.poem .txt p:empty{height:1.8em}
+
+/* ===== 사진 한 장 ===== */
+.picture img{width:100%;aspect-ratio:1/1.19;object-fit:cover}
+
+/* ===== 혼주 ===== */
+.family{padding-top:0;letter-spacing:.1em}
+.family .row{display:flex;justify-content:center;align-items:center;min-height:2em;gap:.3em}
+.family .row+.row{margin-top:1.1em}
+.family b{font-weight:600}
+.family .nm{font-weight:600}
+
+/* ===== 신랑·신부 사진 ===== */
+.portrait{padding-left:4.7em;padding-right:4.7em}
+.portrait .imgs{display:flex;align-items:center;gap:1.2em}
+.portrait .imgs div{flex:1;aspect-ratio:1/1.35;border-radius:1.2em;overflow:hidden;background:#f3f4f3}
+.portrait .imgs img{width:100%;height:100%;object-fit:cover}
+.portrait .imgs svg{width:1.4em;flex:none;color:var(--accent)}
+.portrait .names{display:flex;gap:1.2em;padding-top:1.4em}
+.portrait .names div{flex:1}
+.portrait .names .g{color:var(--groom)}.portrait .names .b{color:var(--bride)}
+.contact{margin-top:2em}
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:.6em;padding:0 0}
+.contact .grid a{display:flex;align-items:center;justify-content:center;gap:.4em;background:var(--btn-bg);border:1px solid var(--btn-line);border-radius:.47em;padding:.55em .4em}
+.contact svg{width:1em;height:1em;color:var(--accent)}
+
+/* ===== 달력 ===== */
+.cal .when{font-weight:600;letter-spacing:0;font-size:1em}
+.cal .where{font-weight:600;letter-spacing:0;padding-bottom:3.5em}
+table.cal-grid{width:82%;margin:0 auto;border-collapse:collapse;table-layout:fixed;line-height:1;font-weight:500}
+table.cal-grid th{padding:1.2em 0;font-weight:500}
+table.cal-grid th:first-child{color:var(--accent)}
+table.cal-grid th:last-child{color:var(--sat)}
+table.cal-grid td{padding:.55em .3em}
+table.cal-grid td .d{position:relative;isolation:isolate;width:2.5em;height:2.5em;margin:0 auto;display:flex;align-items:center;justify-content:center}
+table.cal-grid td:first-child .d{color:var(--accent)}
+table.cal-grid td .d.today{color:#fff}
+table.cal-grid td .d.today::before{content:"";position:absolute;inset:10%;border-radius:50%;background:var(--marker);z-index:-1;animation:pulse 1.6s ease-in-out infinite}
+table.cal-grid td .d.today .t{position:absolute;top:100%;left:50%;transform:translateX(-50%);font-size:.78em;color:var(--accent);white-space:nowrap;font-weight:600}
+table.cal-grid td .d .z{z-index:1}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+
+/* ===== 카운트다운 ===== */
+.count{padding-top:0;padding-bottom:3.5em}
+.count .boxes{display:flex;align-items:center;justify-content:center;font-weight:300;letter-spacing:0;color:var(--accent)}
+.count .box{background:var(--btn-bg);border:1px solid var(--btn-line);border-radius:.9em;padding:1.4em 1.45em;display:flex;flex-direction:column;align-items:center;gap:1.1em}
+.count .box .n{font-size:1.375em;line-height:1;width:2ch;text-align:center}
+.count .box .u{font-family:var(--garamond);font-size:.75em;line-height:1}
+.count .colon{margin:0 .7em;font-size:.9em}
+.count .dday{margin-top:3.4em;line-height:2.2}
+.count .dday b{font-weight:600;color:var(--accent)}
+
+/* ===== 갤러리 ===== */
+.gallery .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.3em;padding:0 1.4em}
+.gallery .grid div{aspect-ratio:1;overflow:hidden;background:#f0f2f0}
+.gallery .grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery .grid img:active{transform:scale(1.04)}
+.gallery .more{margin-top:1.6em}
+/* 라이트박스 */
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:200;display:none;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;object-fit:contain}
+#lb .x{position:absolute;top:1em;right:1em;color:#fff;font-size:2em;line-height:1;padding:.2em}
+
+/* ===== 오시는 길 ===== */
+.loc .addr{letter-spacing:-.05em;padding-bottom:3.5em}
+.loc .addr .tel{letter-spacing:0}
+.loc .map{padding:0 2.2em}
+.loc .mapbox{position:relative;width:100%;height:22em;border:1px solid var(--btn-line);border-radius:.9em;overflow:hidden;background:#f8f9fa}
+.loc .mapbox iframe{width:100%;height:100%;border:0;filter:saturate(.85)}
+.loc .mapbox .hint{position:absolute;left:50%;bottom:.8em;transform:translateX(-50%);background:rgba(0,0,0,.55);color:#fff;font-size:.8em;padding:.25em .9em;border-radius:999px;font-family:var(--sans);letter-spacing:0;pointer-events:none}
+.loc .apps{display:grid;grid-template-columns:repeat(3,1fr);gap:.6em;margin-top:.9em}
+.loc .apps a{display:flex;align-items:center;justify-content:center;gap:.4em;background:var(--btn-bg);border:1px solid var(--btn-line);border-radius:.47em;padding:.6em 0}
+.loc .apps img{width:1.2em;height:1.2em;border-radius:.25em}
+
+.wtc{padding-top:0;text-align:left}
+.wtc .item{padding:1.8em 2.2em}
+.wtc .item h3{font-size:1.25em;font-weight:600;letter-spacing:-.02em;line-height:1.8;padding-bottom:.6em}
+.wtc .item .c{border-top:1px solid var(--line);padding-top:1.2em}
+.wtc .item .c p+p{margin-top:1.1em}
+.wtc .item .c b{font-weight:600}
+.wtc .item .c .tag{display:inline-block;background:var(--btn-bg);border:1px solid var(--btn-line);border-radius:.3em;padding:0 .5em;font-size:.9em;margin-right:.4em;letter-spacing:0}
+
+/* ===== 사진 + 문구 (Groom & Bride) ===== */
+.picture3{position:relative}
+.picture3 img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.picture3 .over{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.3);background:rgba(0,0,0,.08)}
+.picture3 .over .l{font-family:var(--label);font-size:1.1em;letter-spacing:.15em}
+.picture3 .over .m{font-family:var(--en-serif);font-size:1.9em;line-height:1.2;margin:.3em 0}
+.picture3 .over .s{font-family:var(--garamond);font-size:.85em;letter-spacing:.2em;text-transform:lowercase}
+
+/* ===== 박스형 안내 (RSVP 등) ===== */
+.boxsec .box{margin:0 2.2em}
+.boxsec .body{padding:0 1em 2em}
+
+/* ===== 계좌 ===== */
+.account .groups{display:flex;flex-direction:column;gap:.9em;padding:0 2.2em}
+.account .grp{background:var(--btn-bg);border:1px solid var(--btn-line);border-radius:.9em;overflow:hidden}
+.account .grp .hd{padding:1.4em;min-height:4.4em;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;font-weight:500}
+.account .grp .hd svg{position:absolute;right:1.4em;width:1em;height:1em;color:var(--accent);transition:transform .3s}
+.account .grp.open .hd svg{transform:rotate(180deg)}
+.account .grp .bd{display:none;border-top:1px solid var(--btn-line);background:#fff}
+.account .grp.open .bd{display:block}
+.account .row{display:flex;align-items:center;justify-content:space-between;gap:.6em;padding:1em 1.2em;text-align:left}
+.account .row+.row{border-top:1px solid var(--line)}
+.account .row .who{font-size:.9em;color:var(--accent)}
+.account .row .num{letter-spacing:0;font-family:var(--sans)}
+.account .row .cp{flex:none;background:var(--btn-bg);border:1px solid var(--btn-line);border-radius:.4em;padding:.35em .8em;font-size:.9em}
+.account .row .cp.ok{background:var(--marker);color:#fff;border-color:var(--marker)}
+
+/* ===== 마무리 ===== */
+.thanks{padding-bottom:9em}
+.thanks .sign{padding:1.6em 0 2.4em;font-weight:600}
+.thanks .copy{font-family:var(--sans);font-size:.72em;color:var(--muted);letter-spacing:0;margin-top:2.6em}
+
+/* 하단 고정 바 */
+.bar{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:.7em 0 calc(.7em + env(safe-area-inset-bottom));z-index:90}
+.bar button{display:flex;flex-direction:column;align-items:center;gap:.2em;font-family:var(--sans);font-size:.72em;color:#555;letter-spacing:0}
+.bar svg{width:1.5em;height:1.5em}
+body.big{font-size:15.5px}
+
+/* 토스트 */
+#toast{position:fixed;left:50%;bottom:6em;transform:translate(-50%,10px);background:rgba(0,0,0,.75);color:#fff;padding:.5em 1.2em;border-radius:999px;font-family:var(--sans);font-size:.85em;letter-spacing:0;opacity:0;transition:.3s;z-index:300;pointer-events:none}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* 미입력 표시 (완성 시 이 클래스만 제거) */
+.todo{color:#b8862b;background:#fff8e6;border-radius:.2em;padding:0 .2em}
+</style>
+</head>
+<body>
+<div id="app">
+
+<!-- 인트로 -->
+<div id="intro">
+  <div class="names">Junmo &amp; Serim</div>
+  <div class="date">2027 · 01 · 16</div>
+</div>
+
+<!-- ===== 1. 커버 ===== -->
+<section class="tight">
+  <div class="cover">
+    <img class="main" src="사진/01_커버_세로1x2_1500x3000/main.jpg" data-alt="사진/01_커버_세로1x2_1500x3000/main" onerror="altExt(this)" alt="메인 사진">
+    <img class="leaves" src="img/leaves.png" alt="" aria-hidden="true">
+    <div class="shade"></div>
+    <div class="txt">
+      <div class="names">홍세림 × 강준모</div>
+      <div class="date" id="coverDate">JANUARY 16, 2027</div>
+      <div class="greet">Two lives, one path from here on.<br>With grateful hearts, we invite you to share the day we begin together.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. 글귀 ===== -->
+<section class="poem">
+  <img class="leaf rv" src="img/decor-leaf.png" alt="">
+  <div class="txt rv">
+<p>같은 방향을 바라보는 일이</p>
+<p>사랑이라는 걸 배웠습니다</p>
+<p></p>
+<p>서두르지 않고, 앞서가지 않고</p>
+<p>나란히 걷는 하루하루를</p>
+<p></p>
+<p>이제 평생의 약속으로 잇습니다</p>
+  </div>
+</section>
+
+<!-- ===== 3. 사진 ===== -->
+<section class="tight picture">
+  <img class="rv" src="사진/02_글귀아래_세로1x1.2_1500x1800/photo-01.jpg" data-alt="사진/02_글귀아래_세로1x1.2_1500x1800/photo-01" onerror="altExt(this)" alt="">
+</section>
+
+<!-- ===== 4. 모시는 글 ===== -->
+<section class="invite">
+  <h2 class="label rv">Invite you</h2>
+  <div class="body rv">
+<p>2021년 여름에 시작한 마음이</p>
+<p>여섯 번의 여름을 지나</p>
+<p>이제 한 가정이 되려 합니다.</p>
+<p></p>
+<p>서로의 반려자가 되는 자리에</p>
+<p>소중한 분들을 모십니다.</p>
+<p></p>
+<p>자리하시어 축복해 주시면</p>
+<p>더없는 기쁨으로 간직하겠습니다.</p>
+  </div>
+</section>
+
+<!-- ===== 5. 혼주 ===== -->
+<section class="family rv">
+  <div class="row"><span class="nm">강인구</span> · <span class="nm">서희경</span><span style="margin:0 .5em">의</span>아들 <span class="nm">준모</span></div>
+  <div class="row"><span class="nm todo">홍○○</span> · <span class="nm todo">○○○</span><span style="margin:0 .5em">의</span>딸 <span class="nm">세림</span></div>
+</section>
+
+<!-- ===== 6. 신랑·신부 사진 + 연락하기 ===== -->
+<section class="portrait">
+  <div class="imgs rv">
+    <div><img src="사진/03_신랑신부_세로1x1.35_1000x1350/portrait-groom.jpg" data-alt="사진/03_신랑신부_세로1x1.35_1000x1350/portrait-groom" onerror="altExt(this)" alt="신랑"></div>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.7-9.6-9.2C.7 8 3 4.5 6.5 4.5c2 0 3.4 1.1 4.2 2.3l1.3 1.9 1.3-1.9c.8-1.2 2.2-2.3 4.2-2.3 3.5 0 5.8 3.5 4.1 7.3C19.5 16.3 12 21 12 21z"/></svg>
+    <div><img src="사진/03_신랑신부_세로1x1.35_1000x1350/portrait-bride.jpg" data-alt="사진/03_신랑신부_세로1x1.35_1000x1350/portrait-bride" onerror="altExt(this)" alt="신부"></div>
+  </div>
+  <div class="names rv">
+    <div><span class="g">신랑</span> 강준모</div>
+    <div><span class="b">신부</span> 홍세림</div>
+  </div>
+  <div class="contact rv">
+    <div class="grid">
+      <a href="tel:010-0000-0000" class="todo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2z"/></svg>신랑에게 연락하기</a>
+      <a href="tel:010-0000-0000" class="todo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2z"/></svg>신부에게 연락하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. 달력 ===== -->
+<section class="cal">
+  <h2 class="label rv" style="padding-bottom:3.4em">Calendar</h2>
+  <div class="when rv">2027년 1월 16일 토요일 오후 4시 20분</div>
+  <div class="where rv">아이벡스 컨벤션 5층</div>
+  <div class="rv"><table class="cal-grid" id="calGrid"></table></div>
+</section>
+
+<!-- ===== 8. 카운트다운 ===== -->
+<section class="count">
+  <div class="boxes rv" id="countBoxes">
+    <div class="box"><span class="n" id="cD">--</span><span class="u">Days</span></div><span class="colon">:</span>
+    <div class="box"><span class="n" id="cH">--</span><span class="u">Hour</span></div><span class="colon">:</span>
+    <div class="box"><span class="n" id="cM">--</span><span class="u">Min</span></div><span class="colon">:</span>
+    <div class="box"><span class="n" id="cS">--</span><span class="u">Sec</span></div>
+  </div>
+  <div class="dday rv">
+    <div>준모 ♥ 세림 결혼식까지 <b id="dLeft">--</b>일</div>
+    <div>준모 ♥ 세림 함께한 지 <b id="dTogether">--</b>일</div>
+  </div>
+</section>
+
+<!-- ===== 9. 갤러리 ===== -->
+<section class="gallery">
+  <h2 class="label rv">Gallery</h2>
+  <div class="grid rv" id="gal">
+    <div><img src="사진/04_갤러리_정방형_1200x1200/gallery-01.jpg" data-alt="사진/04_갤러리_정방형_1200x1200/gallery-01" onerror="altExt(this)" alt=""></div>
+    <div><img src="사진/04_갤러리_정방형_1200x1200/gallery-02.jpg" data-alt="사진/04_갤러리_정방형_1200x1200/gallery-02" onerror="altExt(this)" alt=""></div>
+    <div><img src="사진/04_갤러리_정방형_1200x1200/gallery-03.jpg" data-alt="사진/04_갤러리_정방형_1200x1200/gallery-03" onerror="altExt(this)" alt=""></div>
+    <div><img src="사진/04_갤러리_정방형_1200x1200/gallery-04.jpg" data-alt="사진/04_갤러리_정방형_1200x1200/gallery-04" onerror="altExt(this)" alt=""></div>
+    <div><img src="사진/04_갤러리_정방형_1200x1200/gallery-05.jpg" data-alt="사진/04_갤러리_정방형_1200x1200/gallery-05" onerror="altExt(this)" alt=""></div>
+    <div><img src="사진/04_갤러리_정방형_1200x1200/gallery-06.jpg" data-alt="사진/04_갤러리_정방형_1200x1200/gallery-06" onerror="altExt(this)" alt=""></div>
+  </div>
+  <div class="more rv"><button class="btn pill" onclick="toast('사진을 추가하면 여기서 펼쳐집니다')">더보기</button></div>
+</section>
+
+<!-- ===== 10. 오시는 길 ===== -->
+<section class="loc">
+  <h2 class="label rv">Location</h2>
+  <h1 class="subtitle rv">오시는 길</h1>
+  <hr class="line rv">
+  <div class="addr rv">
+    <p>경기 광명시 양지로 17</p>
+    <p>AK플라자 광명 5층 아이벡스 컨벤션</p>
+    <p class="tel"><a href="tel:02-897-1002">02-897-1002</a></p>
+    <button class="btn" style="margin-top:1.2em;padding:.6em 1.6em" onclick="copyText('경기 광명시 양지로 17 AK플라자 광명 5층 아이벡스 컨벤션','주소를 복사했습니다')">주소 복사</button>
+  </div>
+  <div class="map rv">
+    <div class="mapbox">
+      <iframe loading="lazy" src="https://www.google.com/maps?q=%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98+%EA%B4%91%EB%AA%85&z=16&hl=ko&output=embed" title="지도" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="hint">아이벡스 컨벤션 · KTX 광명역 앞</div>
+    </div>
+    <div class="apps">
+      <a href="https://map.naver.com/p/search/%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98" target="_blank" rel="noopener"><span style="display:inline-block;width:1em;height:1em;border-radius:.25em;background:#03c75a"></span>네이버지도</a>
+      <a href="https://map.kakao.com/link/search/%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98" target="_blank" rel="noopener"><span style="display:inline-block;width:1em;height:1em;border-radius:.25em;background:#fee500"></span>카카오맵</a>
+      <a href="tmap://search?name=%EC%95%84%EC%9D%B4%EB%B2%A1%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98"><span style="display:inline-block;width:1em;height:1em;border-radius:.25em;background:#e0225b"></span>티맵</a>
+    </div>
+  </div>
+</section>
+
+<section class="wtc">
+  <div class="item rv">
+    <h3>KTX · 지하철</h3>
+    <div class="c">
+      <p><b>KTX 광명역</b> 하차 후 도보 5분<br>서울역 · 용산역에서 약 15분</p>
+      <p><b>1호선 광명역 1번 출구</b> 앞 보행자도로 이용<br>횡단보도를 건너 AK플라자 방향으로 직진 (도보 5분)</p>
+      <p><span class="tag">추천</span>TOP10(탑텐) 매장이 있는 골목으로 들어가면<br>로또판매점 우측에 5층으로 오르는 에스컬레이터가 있습니다.</p>
+      <p><span class="tag">가능</span>건물 입구로 들어가면 내부 엘리베이터도 이용할 수 있으나<br>대기가 길 수 있습니다.</p>
+    </div>
+  </div>
+  <div class="item rv">
+    <h3>버스</h3>
+    <div class="c">
+      <p><b>광명역데시앙 · 일직동행정복지센터</b> 정류장 하차<br>(정류장 번호 14459) AK플라자 바로 앞</p>
+    </div>
+  </div>
+  <div class="item rv">
+    <h3>자가용</h3>
+    <div class="c">
+      <p><span class="tag">내비게이션</span>"아이벡스 컨벤션" 또는 "AK플라자 광명"</p>
+      <p><span class="tag">주소</span>경기 광명시 양지로 17</p>
+    </div>
+  </div>
+  <div class="item rv">
+    <h3>주차</h3>
+    <div class="c">
+      <p><b>U PLANET(AK플라자) 지하 B3~B8층</b> 3,200대 주차 가능<br>IVEX 표지판을 따라 주차하신 후<br>에스컬레이터 또는 엘리베이터로 5층까지 올라오시면 됩니다.</p>
+      <p><b>주차는 2시간 무료</b>입니다.<br>웨딩홀 로비 웰컴드링크존 좌측 노트북에서<br>사전 정산 부탁드립니다.</p>
+      <p><span class="tag">Tip</span>지하 2층 다이소, 1층 카페 등 건물 내 매장 이용 시<br>2시간 추가 정산이 가능합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 11. 사진 + 문구 ===== -->
+<section class="tight picture3">
+  <img src="사진/05_해피웨딩데이배경_가로3x2_1500x1000/photo-02.jpg" data-alt="사진/05_해피웨딩데이배경_가로3x2_1500x1000/photo-02" onerror="altExt(this)" alt="">
+  <div class="over">
+    <div class="l">Groom &amp; Bride</div>
+    <div class="m">Happy Wedding Day</div>
+    <div class="s">we are getting married</div>
+  </div>
+</section>
+
+<!-- ===== 12. 참석 여부 ===== -->
+<section class="boxsec rsvp">
+  <div class="box">
+    <h2 class="label rv">Rsvp</h2>
+    <h1 class="subtitle rv">참석 여부</h1>
+    <hr class="line rv">
+    <div class="body rv">
+<p>참석의 부담은 가지지 말아주시고</p>
+<p>정성껏 준비하기 위해 여쭙는 것이니</p>
+<p>참석 여부를 알려주시면 감사하겠습니다.</p>
+    </div>
+    <a class="btn block rv todo" href="#" onclick="toast('참석 여부 폼 링크를 연결해 주세요');return false">참석 여부 알리기</a>
+  </div>
+</section>
+
+<!-- ===== 13. 안내사항 ===== -->
+<section class="boxsec info">
+  <div class="box">
+    <h2 class="label rv">Information</h2>
+    <h1 class="subtitle rv">안내사항</h1>
+    <hr class="line rv">
+    <div class="body rv">
+<p>예식은 오후 4시 20분에 시작합니다.</p>
+<p>식사는 예식 후 같은 층 연회장에서</p>
+<p>준비되어 있습니다.</p>
+<p></p>
+<p>화환은 정중히 사양합니다.</p>
+<p>축하해 주시는 마음만 감사히 받겠습니다.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ===== 19. 마음 전하실 곳 ===== -->
+<section class="account">
+  <h2 class="label rv">Account</h2>
+  <h1 class="subtitle rv">마음 전하실 곳</h1>
+  <hr class="line rv">
+  <div class="body rv" style="padding-bottom:2.4em">
+<p>참석이 어려워 직접 축하를 전하지 못하는</p>
+<p>분들을 위해 계좌번호를 기재하였습니다.</p>
+<p>넓은 마음으로 양해 부탁드립니다.</p>
+<p>전해주시는 진심은 소중하게 간직하여</p>
+<p>좋은 부부의 모습으로 보답하겠습니다.</p>
+  </div>
+  <div class="groups rv">
+    <div class="grp">
+      <div class="hd" onclick="this.parentElement.classList.toggle('open')">신랑측<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+      <div class="bd">
+        <div class="row"><div><div class="who">신랑 강준모</div><div class="num todo">은행명 000-0000-0000</div></div><button class="cp" onclick="copyAcct(this,'000-0000-0000')">복사</button></div>
+        <div class="row"><div><div class="who">아버지 강인구</div><div class="num todo">은행명 000-0000-0000</div></div><button class="cp" onclick="copyAcct(this,'000-0000-0000')">복사</button></div>
+        <div class="row"><div><div class="who">어머니 서희경</div><div class="num todo">은행명 000-0000-0000</div></div><button class="cp" onclick="copyAcct(this,'000-0000-0000')">복사</button></div>
+      </div>
+    </div>
+    <div class="grp">
+      <div class="hd" onclick="this.parentElement.classList.toggle('open')">신부측<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+      <div class="bd">
+        <div class="row"><div><div class="who">신부 홍세림</div><div class="num todo">은행명 000-0000-0000</div></div><button class="cp" onclick="copyAcct(this,'000-0000-0000')">복사</button></div>
+        <div class="row"><div><div class="who">아버지 <span class="todo">홍○○</span></div><div class="num todo">은행명 000-0000-0000</div></div><button class="cp" onclick="copyAcct(this,'000-0000-0000')">복사</button></div>
+        <div class="row"><div><div class="who">어머니 <span class="todo">○○○</span></div><div class="num todo">은행명 000-0000-0000</div></div><button class="cp" onclick="copyAcct(this,'000-0000-0000')">복사</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== 21. 마무리 ===== -->
+<section class="thanks">
+  <div class="body rv">
+<p>저희 두 사람의 시작을 진심으로 축복해 주시는</p>
+<p>모든 분들께 머리숙여 깊은 감사드립니다.</p>
+<p>행복하게 잘 살겠습니다.</p>
+  </div>
+  <div class="sign rv">신랑 강준모 · 신부 홍세림</div>
+  <button class="btn rv" style="padding:.6em 1.8em" onclick="share()">공유하기</button>
+  <div class="copy rv">Junmo &amp; Serim · 2027. 01. 16</div>
+</section>
+
+</div><!-- /#app -->
+
+<!-- 하단 바 -->
+<div class="bar">
+  <button onclick="document.body.classList.toggle('big');toast(document.body.classList.contains('big')?'큰 글씨로 보기':'기본 글씨로 보기')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>큰 글씨</button>
+  <button onclick="document.querySelector('.rsvp').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>참석 여부</button>
+  <button onclick="document.querySelector('.loc').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>오시는 길</button>
+  <button onclick="share()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>공유</button>
+</div>
+
+<!-- 라이트박스 -->
+<div id="lb" onclick="this.classList.remove('on')"><button class="x">×</button><img id="lbImg" alt=""></div>
+
+
+<div id="toast"></div>
+
+<script>
+/* ===== 기본 설정 : 여기 값만 바꾸면 날짜 관련 요소가 모두 따라갑니다 ===== */
+const WEDDING = new Date('2027-01-16T16:20:00+09:00');
+const TOGETHER_SINCE = new Date('2021-08-08T00:00:00+09:00');
+const SHARE_TITLE = '강준모 ❤️ 홍세림 결혼합니다.';
+const SHARE_TEXT = '2027년 1월 16일 토요일 오후 4시 20분 · 아이벡스 컨벤션 5층';
+
+/* 사진 확장자 자동 대체 (jpg → jpeg → png → webp) */
+function altExt(im){const b=im.dataset.alt;const ext=['jpeg','png','webp','JPG','PNG'];const k=+(im.dataset.k||0);if(k<ext.length){im.dataset.k=k+1;im.src=b+'.'+ext[k]}else{im.onerror=null;im.style.visibility='hidden'}}
+/* 인트로 */
+setTimeout(()=>document.getElementById('intro').classList.add('out'),1800);
+
+/* 커버 날짜 글자 순차 등장 */
+(()=>{const el=document.getElementById('coverDate');const t=el.textContent;el.textContent='';[...t].forEach((ch,i)=>{const s=document.createElement('span');s.textContent=ch===' '?' ':ch;s.style.animationDelay=(2600+i*70)+'ms';el.appendChild(s)})})();
+
+/* 스크롤 등장 */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* 달력 */
+(()=>{const y=WEDDING.getFullYear(),m=WEDDING.getMonth(),d=WEDDING.getDate();
+const first=new Date(y,m,1).getDay(),last=new Date(y,m+1,0).getDate();
+const hh=WEDDING.getHours(),mm=WEDDING.getMinutes();
+const tl=(hh<12?'오전 ':'오후 ')+((hh%12)||12)+'시'+(mm?' '+mm+'분':'');
+let h='<thead><tr>'+['일','월','화','수','목','금','토'].map(x=>'<th>'+x+'</th>').join('')+'</tr></thead><tbody><tr>';
+let c=0;for(let i=0;i<first;i++){h+='<td><div class="d"></div></td>';c++}
+for(let i=1;i<=last;i++){if(c===7){h+='</tr><tr>';c=0}
+h+='<td><div class="d'+(i===d?' today':'')+'"><span class="z">'+i+'</span>'+(i===d?'<span class="t">'+tl+'</span>':'')+'</div></td>';c++}
+while(c<7&&c>0){h+='<td><div class="d"></div></td>';c++}
+h+='</tr></tbody>';document.getElementById('calGrid').innerHTML=h})();
+
+/* 카운트다운 */
+function tick(){const now=new Date();let diff=WEDDING-now;const past=diff<0;diff=Math.abs(diff);
+const D=Math.floor(diff/864e5),H=Math.floor(diff/36e5)%24,M=Math.floor(diff/6e4)%60,S=Math.floor(diff/1e3)%60;
+const p=n=>String(n).padStart(2,'0');
+cD.textContent=D;cH.textContent=p(H);cM.textContent=p(M);cS.textContent=p(S);
+dLeft.textContent=past?0:Math.ceil((WEDDING-now)/864e5);
+dTogether.textContent=Math.floor((now-TOGETHER_SINCE)/864e5)+1}
+tick();setInterval(tick,1000);
+
+/* 갤러리 라이트박스 */
+document.querySelectorAll('#gal img').forEach(im=>im.addEventListener('click',()=>{lbImg.src=im.src;lb.classList.add('on')}));
+
+/* 복사 · 토스트 · 공유 */
+let tt;function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1800)}
+async function copyText(s,msg){try{await navigator.clipboard.writeText(s);toast(msg||'복사했습니다')}catch(e){const ta=document.createElement('textarea');ta.value=s;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();toast(msg||'복사했습니다')}}
+function copyAcct(btn,num){copyText(num,'계좌번호를 복사했습니다');btn.textContent='복사 완료';btn.classList.add('ok');setTimeout(()=>{btn.textContent='복사';btn.classList.remove('ok')},1800)}
+async function share(){if(navigator.share){try{await navigator.share({title:SHARE_TITLE,text:SHARE_TEXT,url:location.href})}catch(e){}}else{copyText(location.href,'링크를 복사했습니다')}}
+
+</script>
+</body>
+</html>
